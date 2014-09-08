@@ -11,7 +11,7 @@ uint32_t Fixed_uDecOut2s_Test(void){
 																				" 70.26",
 																				"808.88",
 																				"999.99"};
-	uint8_t *testOutput;
+	uint8_t *testOutput = (uint8_t*)malloc(7*sizeof(uint8_t));
 	uint32_t i,j;
 	
 	i = 0;
@@ -26,6 +26,7 @@ uint32_t Fixed_uDecOut2s_Test(void){
 		}
 		i++;
 	}
+	free(testoutput);
 	return i;
 }
 
@@ -42,7 +43,7 @@ uint32_t Fixed_sDecOut3s_Test(void){
 																				" 0.308",
 																				" 7.047",
 																				" 9.999"};
-	uint8_t *testOutput;
+	uint8_t *testOutput = (uint8_t*)malloc(7*sizeof(uint8_t));
 	uint32_t i,j;
 	
 	i = 0;
@@ -57,6 +58,7 @@ uint32_t Fixed_sDecOut3s_Test(void){
 		}
 		i++;
 	}
+	free(testoutput);
 	return i;
 }
 
@@ -72,7 +74,7 @@ uint32_t Fixed_uBinOut8s_Test(void){
 																				" 19.53",
 																				"117.19",
 																				"999.99"};
-	uint8_t *testOutput;
+	uint8_t *testOutput = (uint8_t*)malloc(7*sizeof(uint8_t));
 	uint32_t i,j;
 	
 	i = 0;
@@ -87,5 +89,6 @@ uint32_t Fixed_uBinOut8s_Test(void){
 		}
 		i++;
 	}
+	free(testOutput);
 	return i;
 }
