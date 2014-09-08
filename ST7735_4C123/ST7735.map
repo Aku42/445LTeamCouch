@@ -162,6 +162,15 @@ Section Cross References
     fixed.o(i.Fixed_uDecOut3) refers to log10.o(i.log10) for log10
     fixed.o(i.Fixed_uDecOut3) refers to dfixi.o(.text) for __aeabi_d2iz
     fixed.o(i.Fixed_uDecOut3) refers to st7735.o(i.ST7735_OutString) for ST7735_OutString
+    test.o(i.Fixed_sDecOut3s_Test) refers to memcpya.o(.text) for __aeabi_memcpy4
+    test.o(i.Fixed_sDecOut3s_Test) refers to fixed.o(i.Fixed_sDecOut3s) for Fixed_sDecOut3s
+    test.o(i.Fixed_sDecOut3s_Test) refers to test.o(.constdata) for .constdata
+    test.o(i.Fixed_uBinOut8s_Test) refers to memcpya.o(.text) for __aeabi_memcpy4
+    test.o(i.Fixed_uBinOut8s_Test) refers to fixed.o(i.Fixed_uBinOut8s) for Fixed_uBinOut8s
+    test.o(i.Fixed_uBinOut8s_Test) refers to test.o(.constdata) for .constdata
+    test.o(i.Fixed_uDecOut2s_Test) refers to memcpya.o(.text) for __aeabi_memcpy4
+    test.o(i.Fixed_uDecOut2s_Test) refers to fixed.o(i.Fixed_uDecOut2s) for Fixed_uDecOut2s
+    test.o(i.Fixed_uDecOut2s_Test) refers to test.o(.constdata) for .constdata
     log10.o(i.__softfp_log10) refers (Special) to iusefp.o(.text) for __I$use$fp
     log10.o(i.__softfp_log10) refers to log10.o(i.log10) for log10
     log10.o(i.log10) refers (Special) to iusefp.o(.text) for __I$use$fp
@@ -569,10 +578,14 @@ Removing Unused input sections from the image.
     Removing fixed.o(i.Fixed_uDecOut2), (76 bytes).
     Removing fixed.o(i.Fixed_uDecOut2s), (94 bytes).
     Removing fixed.o(i.Fixed_uDecOut3), (152 bytes).
+    Removing test.o(i.Fixed_sDecOut3s_Test), (92 bytes).
+    Removing test.o(i.Fixed_uBinOut8s_Test), (92 bytes).
+    Removing test.o(i.Fixed_uDecOut2s_Test), (92 bytes).
+    Removing test.o(.constdata), (284 bytes).
     Removing dfltui.o(.text), (26 bytes).
     Removing f2d.o(.text), (38 bytes).
 
-48 unused section(s) (total 18930 bytes) removed from the image.
+52 unused section(s) (total 19490 bytes) removed from the image.
 
 ==============================================================================
 
@@ -586,38 +599,38 @@ Image Symbol Table
     ../clib/microlib/division.c              0x00000000   Number         0  uldiv.o ABSOLUTE
     ../clib/microlib/division.c              0x00000000   Number         0  uidiv.o ABSOLUTE
     ../clib/microlib/errno.c                 0x00000000   Number         0  errno.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
-    ../clib/microlib/longlong.c              0x00000000   Number         0  llsshr.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
     ../clib/microlib/longlong.c              0x00000000   Number         0  llushr.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llsshr.o ABSOLUTE
     ../clib/microlib/longlong.c              0x00000000   Number         0  llshl.o ABSOLUTE
-    ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  malloca.o ABSOLUTE
     ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  malloc.o ABSOLUTE
     ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  mallocra.o ABSOLUTE
+    ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  malloca.o ABSOLUTE
     ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  mallocr.o ABSOLUTE
     ../clib/microlib/malloc/mvars.c          0x00000000   Number         0  mvars.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf2.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf1.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf0.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfb.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf7.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfa.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf8.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfa.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfb.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf0.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf1.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf2.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf3.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf6.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf5.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf4.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf5.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf6.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf7.o ABSOLUTE
     ../clib/microlib/printf/stubs.s          0x00000000   Number         0  stubs.o ABSOLUTE
     ../clib/microlib/stdio/streams.c         0x00000000   Number         0  stdout.o ABSOLUTE
     ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpyb.o ABSOLUTE
@@ -634,8 +647,8 @@ Image Symbol Table
     ../fplib/microlib/fpflt.c                0x00000000   Number         0  dflti.o ABSOLUTE
     ../fplib/microlib/fpmul.c                0x00000000   Number         0  dmul.o ABSOLUTE
     ../fplib/microlib/fpscalb.c              0x00000000   Number         0  dscalb.o ABSOLUTE
-    ../mathlib/log.c                         0x00000000   Number         0  log.o ABSOLUTE
     ../mathlib/log.c                         0x00000000   Number         0  log_x.o ABSOLUTE
+    ../mathlib/log.c                         0x00000000   Number         0  log.o ABSOLUTE
     ../mathlib/log10.c                       0x00000000   Number         0  log10.o ABSOLUTE
     ../mathlib/log10.c                       0x00000000   Number         0  log10_x.o ABSOLUTE
     ../mathlib/poly.c                        0x00000000   Number         0  poly.o ABSOLUTE
@@ -650,6 +663,7 @@ Image Symbol Table
     handlers.s                               0x00000000   Number         0  handlers.o ABSOLUTE
     init.s                                   0x00000000   Number         0  init.o ABSOLUTE
     startup.s                                0x00000000   Number         0  startup.o ABSOLUTE
+    test.c                                   0x00000000   Number         0  test.o ABSOLUTE
     .ARM.Collect$$$$00000000                 0x00000284   Section        0  entry.o(.ARM.Collect$$$$00000000)
     .ARM.Collect$$$$00000001                 0x00000284   Section        4  entry2.o(.ARM.Collect$$$$00000001)
     .ARM.Collect$$$$00000004                 0x00000288   Section        4  entry5.o(.ARM.Collect$$$$00000004)
@@ -1028,37 +1042,37 @@ Memory Map of the image
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x00000000   0x00000284   Code   RO            3  * RESET               startup.o
-    0x00000284   0x00000000   Code   RO          460  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
-    0x00000284   0x00000004   Code   RO          772    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
-    0x00000288   0x00000004   Code   RO          775    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
-    0x0000028c   0x00000000   Code   RO          777    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
-    0x0000028c   0x00000000   Code   RO          779    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
-    0x0000028c   0x00000008   Code   RO          780    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
-    0x00000294   0x00000000   Code   RO          782    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
-    0x00000294   0x00000000   Code   RO          784    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
-    0x00000294   0x00000004   Code   RO          773    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
-    0x00000298   0x00000012   Code   RO          463    .text               mc_w.l(strcpy.o)
-    0x000002aa   0x00000022   Code   RO          754    .text               mf_w.l(dflti.o)
-    0x000002cc   0x0000003e   Code   RO          758    .text               mf_w.l(dfixi.o)
-    0x0000030a   0x0000002c   Code   RO          787    .text               mc_w.l(uidiv.o)
-    0x00000336   0x00000062   Code   RO          789    .text               mc_w.l(uldiv.o)
-    0x00000398   0x00000020   Code   RO          791    .text               mc_w.l(llushr.o)
-    0x000003b8   0x00000000   Code   RO          806    .text               mc_w.l(iusefp.o)
-    0x000003b8   0x000000be   Code   RO          807    .text               mf_w.l(depilogue.o)
-    0x00000476   0x0000014e   Code   RO          809    .text               mf_w.l(dadd.o)
-    0x000005c4   0x000000e4   Code   RO          811    .text               mf_w.l(dmul.o)
-    0x000006a8   0x000000de   Code   RO          813    .text               mf_w.l(ddiv.o)
-    0x00000786   0x0000002e   Code   RO          815    .text               mf_w.l(dscalb.o)
-    0x000007b4   0x00000030   Code   RO          817    .text               mf_w.l(dfixul.o)
-    0x000007e4   0x00000028   Code   RO          819    .text               mf_w.l(cdrcmple.o)
-    0x0000080c   0x00000024   Code   RO          824    .text               mc_w.l(init.o)
-    0x00000830   0x0000001e   Code   RO          826    .text               mc_w.l(llshl.o)
-    0x0000084e   0x00000024   Code   RO          828    .text               mc_w.l(llsshr.o)
+    0x00000284   0x00000000   Code   RO          491  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x00000284   0x00000004   Code   RO          807    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
+    0x00000288   0x00000004   Code   RO          810    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x0000028c   0x00000000   Code   RO          812    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
+    0x0000028c   0x00000000   Code   RO          814    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
+    0x0000028c   0x00000008   Code   RO          815    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
+    0x00000294   0x00000000   Code   RO          817    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
+    0x00000294   0x00000000   Code   RO          819    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
+    0x00000294   0x00000004   Code   RO          808    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
+    0x00000298   0x00000012   Code   RO          496    .text               mc_w.l(strcpy.o)
+    0x000002aa   0x00000022   Code   RO          789    .text               mf_w.l(dflti.o)
+    0x000002cc   0x0000003e   Code   RO          793    .text               mf_w.l(dfixi.o)
+    0x0000030a   0x0000002c   Code   RO          822    .text               mc_w.l(uidiv.o)
+    0x00000336   0x00000062   Code   RO          824    .text               mc_w.l(uldiv.o)
+    0x00000398   0x00000020   Code   RO          826    .text               mc_w.l(llushr.o)
+    0x000003b8   0x00000000   Code   RO          837    .text               mc_w.l(iusefp.o)
+    0x000003b8   0x000000be   Code   RO          838    .text               mf_w.l(depilogue.o)
+    0x00000476   0x0000014e   Code   RO          840    .text               mf_w.l(dadd.o)
+    0x000005c4   0x000000e4   Code   RO          842    .text               mf_w.l(dmul.o)
+    0x000006a8   0x000000de   Code   RO          844    .text               mf_w.l(ddiv.o)
+    0x00000786   0x0000002e   Code   RO          846    .text               mf_w.l(dscalb.o)
+    0x000007b4   0x00000030   Code   RO          848    .text               mf_w.l(dfixul.o)
+    0x000007e4   0x00000028   Code   RO          850    .text               mf_w.l(cdrcmple.o)
+    0x0000080c   0x00000024   Code   RO          855    .text               mc_w.l(init.o)
+    0x00000830   0x0000001e   Code   RO          857    .text               mc_w.l(llshl.o)
+    0x0000084e   0x00000024   Code   RO          859    .text               mc_w.l(llsshr.o)
     0x00000872   0x00000002   PAD
-    0x00000874   0x00000028   Code   RO          830    .text               mf_w.l(cdcmple.o)
+    0x00000874   0x00000028   Code   RO          861    .text               mf_w.l(cdcmple.o)
     0x0000089c   0x00000020   Code   RO           34    i.Delay1ms          st7735.o
-    0x000008bc   0x00000050   Code   RO          394    i.Fixed_sDecOut3    fixed.o
-    0x0000090c   0x00000076   Code   RO          395    i.Fixed_sDecOut3s   fixed.o
+    0x000008bc   0x00000050   Code   RO          397    i.Fixed_sDecOut3    fixed.o
+    0x0000090c   0x00000076   Code   RO          398    i.Fixed_sDecOut3s   fixed.o
     0x00000982   0x00000010   Code   RO           37    i.Output_Init       st7735.o
     0x00000992   0x00000002   PAD
     0x00000994   0x0000007c   Code   RO           12    i.PLL_Init          pll.o
@@ -1072,23 +1086,23 @@ Memory Map of the image
     0x00000dc4   0x00000016   Code   RO           54    i.ST7735_OutString  st7735.o
     0x00000dda   0x00000002   PAD
     0x00000ddc   0x00000020   Code   RO           64    i.ST7735_SetCursor  st7735.o
-    0x00000dfc   0x00000020   Code   RO          698    i.__0printf         mc_w.l(printfa.o)
-    0x00000e1c   0x000000aa   Code   RO          821    i.__kernel_poly     m_ws.l(poly.o)
-    0x00000ec6   0x0000000e   Code   RO          834    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x00000ed4   0x00000002   Code   RO          835    i.__scatterload_null  mc_w.l(handlers.o)
-    0x00000ed6   0x0000000e   Code   RO          836    i.__scatterload_zeroinit  mc_w.l(handlers.o)
-    0x00000ee4   0x0000000c   Code   RO          801    i.__set_errno       mc_w.l(errno.o)
-    0x00000ef0   0x0000015c   Code   RO          705    i._fp_digits        mc_w.l(printfa.o)
-    0x0000104c   0x000006f0   Code   RO          706    i._printf_core      mc_w.l(printfa.o)
-    0x0000173c   0x00000026   Code   RO          707    i._printf_post_padding  mc_w.l(printfa.o)
-    0x00001762   0x00000030   Code   RO          708    i._printf_pre_padding  mc_w.l(printfa.o)
+    0x00000dfc   0x00000020   Code   RO          733    i.__0printf         mc_w.l(printfa.o)
+    0x00000e1c   0x000000aa   Code   RO          852    i.__kernel_poly     m_ws.l(poly.o)
+    0x00000ec6   0x0000000e   Code   RO          865    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x00000ed4   0x00000002   Code   RO          866    i.__scatterload_null  mc_w.l(handlers.o)
+    0x00000ed6   0x0000000e   Code   RO          867    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x00000ee4   0x0000000c   Code   RO          832    i.__set_errno       mc_w.l(errno.o)
+    0x00000ef0   0x0000015c   Code   RO          740    i._fp_digits        mc_w.l(printfa.o)
+    0x0000104c   0x000006f0   Code   RO          741    i._printf_core      mc_w.l(printfa.o)
+    0x0000173c   0x00000026   Code   RO          742    i._printf_post_padding  mc_w.l(printfa.o)
+    0x00001762   0x00000030   Code   RO          743    i._printf_pre_padding  mc_w.l(printfa.o)
     0x00001792   0x00000056   Code   RO           68    i.commandList       st7735.o
     0x000017e8   0x00000184   Code   RO           69    i.commonInit        st7735.o
     0x0000196c   0x00000010   Code   RO           73    i.fputc             st7735.o
-    0x0000197c   0x00000370   Code   RO          763    i.log               m_ws.l(log.o)
-    0x00001cec   0x000000f4   Code   RO          453    i.log10             m_ws.l(log10.o)
+    0x0000197c   0x00000370   Code   RO          798    i.log               m_ws.l(log.o)
+    0x00001cec   0x000000f4   Code   RO          484    i.log10             m_ws.l(log10.o)
     0x00001de0   0x00000044   Code   RO          314    i.main              st7735testmain.o
-    0x00001e24   0x0000006c   Code   RO          727    i.malloc            mc_w.l(malloc.o)
+    0x00001e24   0x0000006c   Code   RO          762    i.malloc            mc_w.l(malloc.o)
     0x00001e90   0x00000012   Code   RO           74    i.pushColor         st7735.o
     0x00001ea2   0x00000002   PAD
     0x00001ea4   0x00000074   Code   RO           75    i.setAddrWindow     st7735.o
@@ -1096,9 +1110,9 @@ Memory Map of the image
     0x00001f48   0x00000020   Code   RO           77    i.writedata         st7735.o
     0x00001f68   0x000007e2   Data   RO           79    .constdata          st7735.o
     0x0000274a   0x00000006   PAD
-    0x00002750   0x00000038   Data   RO          764    .constdata          m_ws.l(log.o)
-    0x00002788   0x00000008   Data   RO          823    .constdata          m_ws.l(qnan.o)
-    0x00002790   0x00000020   Data   RO          832    Region$$Table       anon$$obj.o
+    0x00002750   0x00000038   Data   RO          799    .constdata          m_ws.l(log.o)
+    0x00002788   0x00000008   Data   RO          854    .constdata          m_ws.l(qnan.o)
+    0x00002790   0x00000020   Data   RO          863    Region$$Table       anon$$obj.o
 
 
     Execution Region ER_RW (Base: 0x20000000, Size: 0x0000003c, Max: 0xffffffff, ABSOLUTE)
@@ -1106,10 +1120,10 @@ Memory Map of the image
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x20000000   0x0000002c   Data   RW           80    .data               st7735.o
-    0x2000002c   0x00000004   Data   RW          786    .data               mc_w.l(stdout.o)
-    0x20000030   0x00000004   Data   RW          797    .data               mc_w.l(mvars.o)
-    0x20000034   0x00000004   Data   RW          798    .data               mc_w.l(mvars.o)
-    0x20000038   0x00000004   Data   RW          802    .data               mc_w.l(errno.o)
+    0x2000002c   0x00000004   Data   RW          821    .data               mc_w.l(stdout.o)
+    0x20000030   0x00000004   Data   RW          828    .data               mc_w.l(mvars.o)
+    0x20000034   0x00000004   Data   RW          829    .data               mc_w.l(mvars.o)
+    0x20000038   0x00000004   Data   RW          833    .data               mc_w.l(errno.o)
 
 
     Execution Region ER_ZI (Base: 0x2000003c, Size: 0x00000404, Max: 0xffffffff, ABSOLUTE)
@@ -1128,14 +1142,14 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       198         16          0          0          0       1367   fixed.o
-       124          6          0          0          0       4595   pll.o
-      1754        190       2018         44          0      14248   st7735.o
-        68          4          0          0          0        423   st7735testmain.o
-       644        620          0          0       1024        700   startup.o
+       198         16          0          0          0       1379   fixed.o
+       124          6          0          0          0       4599   pll.o
+      1754        190       2018         44          0      14332   st7735.o
+        68          4          0          0          0        427   st7735testmain.o
+       644        620          0          0       1024        704   startup.o
 
     ----------------------------------------------------------------------
-      2794        836       2056         44       1024      21333   Object Totals
+      2794        836       2056         44       1024      21441   Object Totals
          0          0         32          0          0          0   (incl. Generated)
          6          0          6          0          0          0   (incl. Padding)
 
@@ -1202,8 +1216,8 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      8040       1058       2120         60       1028      21601   Grand Totals
-      8040       1058       2120         60       1028      21601   ELF Image Totals
+      8040       1058       2120         60       1028      21709   Grand Totals
+      8040       1058       2120         60       1028      21709   ELF Image Totals
       8040       1058       2120         60          0          0   ROM Totals
 
 ==============================================================================

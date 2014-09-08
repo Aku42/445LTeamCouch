@@ -34,6 +34,7 @@
 #include <stdio.h>
 #include <stdint.h>
 #include "fixed.h"
+#include "test.h"
 #include "ST7735.h"
 #include "PLL.h"
 #include "inc/tm4c123gh6pm.h"
