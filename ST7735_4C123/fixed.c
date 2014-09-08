@@ -1,11 +1,15 @@
 #include <stdio.h>
+#include <math.h>
 #include <stdint.h>
 #include "ST7735.h"
 #include "fixed.h"
 
 void Fixed_uDecOut2s(uint32_t n,  char *string){
-	int32_t i;
-	for(i = 5; i >= 0; i--){
+	int32_t i,j;
+	if(!((j=(int)log10((double)n))<3)){
+		j = 3;
+	}
+	for(i = j; i >= 0; i--){
 		if(i == 3){
 			string[i] = '.';
 		}
@@ -29,12 +33,15 @@ void Fixed_uDecOut2(uint32_t n){
 
 void Fixed_uDecOut3(uint32_t n){
 	uint8_t *str;
-	int32_t i;
+	int32_t i,j;
 	if(n > 99999){
 		str = (uint8_t*)"**.***";
 	}
 	else{
-		for(i = 5; i >= 0; i--){
+		if(!((j=(int)log10((double)n))<4)){
+		  j = 4;
+	  }
+		for(i = j; i >= 0; i--){
 			if(i == 2){
 				str[i] = '.';
 			}
@@ -49,13 +56,13 @@ void Fixed_uDecOut3(uint32_t n){
 
 void Fixed_sDecOut3s(int32_t n, char *string){
 	int32_t i, j;
-	if (n >= 0){
-		j = 4;
+	if(!((j=(int)log10((double)n))<4)){
+		j=4;
 	}
-	else{
-		j = 5;
+	if(n<0){
+		j+=1;
 	}
-	for(i = j; i >= 0; i--){
+	for(i = j; i >= 1; i--){
 		if(i == j-3){
 			string[i] = '.';
 		}
@@ -81,9 +88,12 @@ void Fixed_sDecOut3(int32_t n){
 }
 
 void Fixed_uBinOut8s(uint32_t n,  char *string){
-	int32_t i;
+	int32_t i,j;
 	n = ((100*n)+128)/256;
-	for(i = 5; i >= 0; i--){
+	if(!((j=(int)log10((double)n))<3)){
+		j=3;
+	}
+	for(i = j; i >= 0; i--){
 		if(i == 3){
 			string[i] = '.';
 		}

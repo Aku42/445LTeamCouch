@@ -104,8 +104,11 @@ Section Cross References
     st7735testmain.o(i.drawthecolors) refers to st7735testmain.o(i.DelayWait10ms) for DelayWait10ms
     st7735testmain.o(i.drawthecolors) refers to st7735testmain.o(.data) for y
     st7735testmain.o(i.main) refers to pll.o(i.PLL_Init) for PLL_Init
-    st7735testmain.o(i.main) refers to st7735.o(i.Output_Init) for Output_Init
-    st7735testmain.o(i.main) refers to printfa.o(i.__0printf) for __2printf
+    st7735testmain.o(i.main) refers to st7735.o(i.ST7735_InitR) for ST7735_InitR
+    st7735testmain.o(i.main) refers to st7735.o(i.ST7735_OutString) for ST7735_OutString
+    st7735testmain.o(i.main) refers to st7735.o(i.ST7735_PlotClear) for ST7735_PlotClear
+    st7735testmain.o(i.main) refers to st7735.o(i.ST7735_PlotPoints) for ST7735_PlotPoints
+    st7735testmain.o(i.main) refers to st7735.o(i.ST7735_PlotNext) for ST7735_PlotNext
     st7735testmain.o(i.main0) refers to pll.o(i.PLL_Init) for PLL_Init
     st7735testmain.o(i.main0) refers to st7735.o(i.ST7735_InitR) for ST7735_InitR
     st7735testmain.o(i.main0) refers to st7735.o(i.ST7735_Color565) for ST7735_Color565
@@ -115,12 +118,9 @@ Section Cross References
     st7735testmain.o(i.main0) refers to st7735.o(i.ST7735_FillScreen) for ST7735_FillScreen
     st7735testmain.o(i.main0) refers to st7735.o(i.ST7735_DrawBitmap) for ST7735_DrawBitmap
     st7735testmain.o(i.main0) refers to st7735testmain.o(.constdata) for Test2
-    st7735testmain.o(i.main2) refers to pll.o(i.PLL_Init) for PLL_Init
-    st7735testmain.o(i.main2) refers to st7735.o(i.ST7735_InitR) for ST7735_InitR
-    st7735testmain.o(i.main2) refers to st7735.o(i.ST7735_OutString) for ST7735_OutString
-    st7735testmain.o(i.main2) refers to st7735.o(i.ST7735_PlotClear) for ST7735_PlotClear
-    st7735testmain.o(i.main2) refers to st7735.o(i.ST7735_PlotPoints) for ST7735_PlotPoints
-    st7735testmain.o(i.main2) refers to st7735.o(i.ST7735_PlotNext) for ST7735_PlotNext
+    st7735testmain.o(i.main1) refers to pll.o(i.PLL_Init) for PLL_Init
+    st7735testmain.o(i.main1) refers to st7735.o(i.Output_Init) for Output_Init
+    st7735testmain.o(i.main1) refers to printfa.o(i.__0printf) for __2printf
     st7735testmain.o(i.main3) refers to pll.o(i.PLL_Init) for PLL_Init
     st7735testmain.o(i.main3) refers to st7735.o(i.ST7735_InitR) for ST7735_InitR
     st7735testmain.o(i.main3) refers to st7735testmain.o(i.drawthecolors) for drawthecolors
@@ -133,11 +133,42 @@ Section Cross References
     st7735testmain.o(i.main6) refers to printfa.o(i.__0printf) for __2printf
     fixed.o(i.Fixed_sDecOut3) refers to fixed.o(i.Fixed_sDecOut3s) for Fixed_sDecOut3s
     fixed.o(i.Fixed_sDecOut3) refers to st7735.o(i.ST7735_OutString) for ST7735_OutString
+    fixed.o(i.Fixed_sDecOut3s) refers to dflti.o(.text) for __aeabi_i2d
+    fixed.o(i.Fixed_sDecOut3s) refers to log10.o(i.log10) for log10
+    fixed.o(i.Fixed_sDecOut3s) refers to dfixi.o(.text) for __aeabi_d2iz
     fixed.o(i.Fixed_uBinOut8) refers to fixed.o(i.Fixed_uBinOut8s) for Fixed_uBinOut8s
     fixed.o(i.Fixed_uBinOut8) refers to st7735.o(i.ST7735_OutString) for ST7735_OutString
+    fixed.o(i.Fixed_uBinOut8s) refers to dfltui.o(.text) for __aeabi_ui2d
+    fixed.o(i.Fixed_uBinOut8s) refers to log10.o(i.log10) for log10
+    fixed.o(i.Fixed_uBinOut8s) refers to dfixi.o(.text) for __aeabi_d2iz
     fixed.o(i.Fixed_uDecOut2) refers to fixed.o(i.Fixed_uDecOut2s) for Fixed_uDecOut2s
     fixed.o(i.Fixed_uDecOut2) refers to st7735.o(i.ST7735_OutString) for ST7735_OutString
+    fixed.o(i.Fixed_uDecOut2s) refers to dfltui.o(.text) for __aeabi_ui2d
+    fixed.o(i.Fixed_uDecOut2s) refers to log10.o(i.log10) for log10
+    fixed.o(i.Fixed_uDecOut2s) refers to dfixi.o(.text) for __aeabi_d2iz
+    fixed.o(i.Fixed_uDecOut3) refers to dfltui.o(.text) for __aeabi_ui2d
+    fixed.o(i.Fixed_uDecOut3) refers to log10.o(i.log10) for log10
+    fixed.o(i.Fixed_uDecOut3) refers to dfixi.o(.text) for __aeabi_d2iz
     fixed.o(i.Fixed_uDecOut3) refers to st7735.o(i.ST7735_OutString) for ST7735_OutString
+    log10.o(i.__softfp_log10) refers (Special) to iusefp.o(.text) for __I$use$fp
+    log10.o(i.__softfp_log10) refers to log10.o(i.log10) for log10
+    log10.o(i.log10) refers (Special) to iusefp.o(.text) for __I$use$fp
+    log10.o(i.log10) refers to dscalb.o(.text) for __ARM_scalbn
+    log10.o(i.log10) refers to errno.o(i.__set_errno) for __set_errno
+    log10.o(i.log10) refers to ddiv.o(.text) for __aeabi_ddiv
+    log10.o(i.log10) refers to dflti.o(.text) for __aeabi_i2d
+    log10.o(i.log10) refers to log.o(i.log) for log
+    log10.o(i.log10) refers to dmul.o(.text) for __aeabi_dmul
+    log10.o(i.log10) refers to dadd.o(.text) for __aeabi_dadd
+    log10_x.o(i.____softfp_log10$lsc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    log10_x.o(i.____softfp_log10$lsc) refers to log10_x.o(i.__log10$lsc) for __log10$lsc
+    log10_x.o(i.__log10$lsc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    log10_x.o(i.__log10$lsc) refers to dscalb.o(.text) for __ARM_scalbn
+    log10_x.o(i.__log10$lsc) refers to errno.o(i.__set_errno) for __set_errno
+    log10_x.o(i.__log10$lsc) refers to dflti.o(.text) for __aeabi_i2d
+    log10_x.o(i.__log10$lsc) refers to log.o(i.log) for log
+    log10_x.o(i.__log10$lsc) refers to dmul.o(.text) for __aeabi_dmul
+    log10_x.o(i.__log10$lsc) refers to dadd.o(.text) for __aeabi_dadd
     entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry10a.o(.ARM.Collect$$$$0000000D) for __rt_final_cpp
     entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry11a.o(.ARM.Collect$$$$0000000F) for __rt_final_exit
     entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry7b.o(.ARM.Collect$$$$00000008) for _main_clock
@@ -381,7 +412,41 @@ Section Cross References
     printfa.o(i._printf_pre_padding) refers (Special) to iusefp.o(.text) for __I$use$fp
     printfa.o(i._snputc) refers (Special) to iusefp.o(.text) for __I$use$fp
     printfa.o(i._sputc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dflti.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dflti.o(.text) refers to depilogue.o(.text) for _double_epilogue
+    dfltui.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dfltui.o(.text) refers to depilogue.o(.text) for _double_epilogue
+    dfixi.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dfixi.o(.text) refers to llushr.o(.text) for __aeabi_llsr
     f2d.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    log.o(i.__softfp_log) refers (Special) to iusefp.o(.text) for __I$use$fp
+    log.o(i.__softfp_log) refers to log.o(i.log) for log
+    log.o(i.log) refers (Special) to iusefp.o(.text) for __I$use$fp
+    log.o(i.log) refers to dscalb.o(.text) for __ARM_scalbn
+    log.o(i.log) refers to errno.o(i.__set_errno) for __set_errno
+    log.o(i.log) refers to ddiv.o(.text) for __aeabi_ddiv
+    log.o(i.log) refers to dadd.o(.text) for __aeabi_dsub
+    log.o(i.log) refers to cdcmple.o(.text) for __aeabi_cdcmpeq
+    log.o(i.log) refers to dflti.o(.text) for __aeabi_i2d
+    log.o(i.log) refers to dmul.o(.text) for __aeabi_dmul
+    log.o(i.log) refers to poly.o(i.__kernel_poly) for __kernel_poly
+    log.o(i.log) refers to qnan.o(.constdata) for __mathlib_zero
+    log.o(i.log) refers to log.o(.constdata) for .constdata
+    log.o(.constdata) refers (Special) to iusefp.o(.text) for __I$use$fp
+    log_x.o(i.____softfp_log$lsc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    log_x.o(i.____softfp_log$lsc) refers to log_x.o(i.__log$lsc) for __log$lsc
+    log_x.o(i.__log$lsc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    log_x.o(i.__log$lsc) refers to dscalb.o(.text) for __ARM_scalbn
+    log_x.o(i.__log$lsc) refers to errno.o(i.__set_errno) for __set_errno
+    log_x.o(i.__log$lsc) refers to dadd.o(.text) for __aeabi_dsub
+    log_x.o(i.__log$lsc) refers to cdcmple.o(.text) for __aeabi_cdcmpeq
+    log_x.o(i.__log$lsc) refers to dflti.o(.text) for __aeabi_i2d
+    log_x.o(i.__log$lsc) refers to dmul.o(.text) for __aeabi_dmul
+    log_x.o(i.__log$lsc) refers to ddiv.o(.text) for __aeabi_ddiv
+    log_x.o(i.__log$lsc) refers to poly.o(i.__kernel_poly) for __kernel_poly
+    log_x.o(i.__log$lsc) refers to qnan.o(.constdata) for __mathlib_zero
+    log_x.o(i.__log$lsc) refers to log_x.o(.constdata) for .constdata
+    log_x.o(.constdata) refers (Special) to iusefp.o(.text) for __I$use$fp
     entry2.o(.ARM.Collect$$$$00000001) refers to entry2.o(.ARM.Collect$$$$00002712) for __lit__00000000
     entry2.o(.ARM.Collect$$$$00002712) refers to startup.o(STACK) for __initial_sp
     entry2.o(__vectab_stack_and_reset_area) refers to startup.o(STACK) for __initial_sp
@@ -391,6 +456,11 @@ Section Cross References
     entry9b.o(.ARM.Collect$$$$0000000C) refers to st7735testmain.o(i.main) for main
     uldiv.o(.text) refers to llushr.o(.text) for __aeabi_llsr
     uldiv.o(.text) refers to llshl.o(.text) for __aeabi_llsl
+    errno.o(i.__aeabi_errno_addr) refers to errno.o(.data) for .data
+    errno.o(i.__read_errno) refers to errno.o(.data) for .data
+    errno.o(i.__set_errno) refers to errno.o(.data) for .data
+    depilogue.o(.text) refers to llshl.o(.text) for __aeabi_llsl
+    depilogue.o(.text) refers to llushr.o(.text) for __aeabi_llsr
     dadd.o(.text) refers to llshl.o(.text) for __aeabi_llsl
     dadd.o(.text) refers to llsshr.o(.text) for __aeabi_lasr
     dadd.o(.text) refers to depilogue.o(.text) for _double_epilogue
@@ -398,9 +468,11 @@ Section Cross References
     ddiv.o(.text) refers to depilogue.o(.text) for _double_round
     dfixul.o(.text) refers to llushr.o(.text) for __aeabi_llsr
     dfixul.o(.text) refers to llshl.o(.text) for __aeabi_llsl
+    poly.o(i.__kernel_poly) refers (Special) to iusefp.o(.text) for __I$use$fp
+    poly.o(i.__kernel_poly) refers to dmul.o(.text) for __aeabi_dmul
+    poly.o(i.__kernel_poly) refers to dadd.o(.text) for __aeabi_dadd
+    qnan.o(.constdata) refers (Special) to iusefp.o(.text) for __I$use$fp
     init.o(.text) refers to entry5.o(.ARM.Collect$$$$00000004) for __main_after_scatterload
-    depilogue.o(.text) refers to llshl.o(.text) for __aeabi_llsl
-    depilogue.o(.text) refers to llushr.o(.text) for __aeabi_llsr
 
 
 ==============================================================================
@@ -411,24 +483,20 @@ Removing Unused input sections from the image.
     Removing startup.o(.text), (28 bytes).
     Removing st7735.o(i.Output_Clear), (10 bytes).
     Removing st7735.o(i.Output_Color), (12 bytes).
+    Removing st7735.o(i.Output_Init), (16 bytes).
     Removing st7735.o(i.Output_Off), (8 bytes).
     Removing st7735.o(i.Output_On), (8 bytes).
-    Removing st7735.o(i.ST7735_Color565), (24 bytes).
     Removing st7735.o(i.ST7735_DrawBitmap), (288 bytes).
     Removing st7735.o(i.ST7735_DrawChar), (268 bytes).
     Removing st7735.o(i.ST7735_DrawFastHLine), (124 bytes).
     Removing st7735.o(i.ST7735_DrawFastVLine), (124 bytes).
     Removing st7735.o(i.ST7735_InitB), (40 bytes).
     Removing st7735.o(i.ST7735_InvertDisplay), (22 bytes).
-    Removing st7735.o(i.ST7735_OutString), (22 bytes).
     Removing st7735.o(i.ST7735_OutUDec), (140 bytes).
     Removing st7735.o(i.ST7735_PlotBar), (88 bytes).
-    Removing st7735.o(i.ST7735_PlotClear), (92 bytes).
     Removing st7735.o(i.ST7735_PlotLine), (264 bytes).
-    Removing st7735.o(i.ST7735_PlotNext), (32 bytes).
     Removing st7735.o(i.ST7735_PlotNextErase), (64 bytes).
     Removing st7735.o(i.ST7735_PlotPoint), (152 bytes).
-    Removing st7735.o(i.ST7735_PlotPoints), (172 bytes).
     Removing st7735.o(i.ST7735_PlotdBfs), (60 bytes).
     Removing st7735.o(i.ST7735_SetRotation), (212 bytes).
     Removing st7735.o(i.ST7735_SetTextColor), (12 bytes).
@@ -436,13 +504,14 @@ Removing Unused input sections from the image.
     Removing st7735.o(i.ferror), (8 bytes).
     Removing st7735.o(i.fgetc), (6 bytes).
     Removing st7735.o(i.fillmessage), (72 bytes).
+    Removing st7735.o(i.fputc), (16 bytes).
     Removing st7735.o(.bss), (12 bytes).
     Removing st7735testmain.o(i.BookExamples), (308 bytes).
     Removing st7735testmain.o(i.DelayWait10ms), (32 bytes).
     Removing st7735testmain.o(i.SSR_Init), (112 bytes).
     Removing st7735testmain.o(i.drawthecolors), (76 bytes).
     Removing st7735testmain.o(i.main0), (2196 bytes).
-    Removing st7735testmain.o(i.main2), (112 bytes).
+    Removing st7735testmain.o(i.main1), (32 bytes).
     Removing st7735testmain.o(i.main3), (152 bytes).
     Removing st7735testmain.o(i.main4), (32 bytes).
     Removing st7735testmain.o(i.main5), (32 bytes).
@@ -450,15 +519,26 @@ Removing Unused input sections from the image.
     Removing st7735testmain.o(.constdata), (12868 bytes).
     Removing st7735testmain.o(.data), (2 bytes).
     Removing fixed.o(i.Fixed_sDecOut3), (48 bytes).
-    Removing fixed.o(i.Fixed_sDecOut3s), (68 bytes).
+    Removing fixed.o(i.Fixed_sDecOut3s), (112 bytes).
     Removing fixed.o(i.Fixed_uBinOut8), (40 bytes).
-    Removing fixed.o(i.Fixed_uBinOut8s), (56 bytes).
+    Removing fixed.o(i.Fixed_uBinOut8s), (98 bytes).
     Removing fixed.o(i.Fixed_uDecOut2), (44 bytes).
-    Removing fixed.o(i.Fixed_uDecOut2s), (48 bytes).
-    Removing fixed.o(i.Fixed_uDecOut3), (76 bytes).
+    Removing fixed.o(i.Fixed_uDecOut2s), (86 bytes).
+    Removing fixed.o(i.Fixed_uDecOut3), (112 bytes).
+    Removing dflti.o(.text), (34 bytes).
+    Removing dfltui.o(.text), (26 bytes).
+    Removing dfixi.o(.text), (62 bytes).
     Removing f2d.o(.text), (38 bytes).
+    Removing depilogue.o(.text), (190 bytes).
+    Removing dadd.o(.text), (334 bytes).
+    Removing dmul.o(.text), (228 bytes).
+    Removing ddiv.o(.text), (222 bytes).
+    Removing dscalb.o(.text), (46 bytes).
+    Removing dfixul.o(.text), (48 bytes).
+    Removing cdrcmple.o(.text), (40 bytes).
+    Removing cdcmple.o(.text), (40 bytes).
 
-50 unused section(s) (total 18778 bytes) removed from the image.
+58 unused section(s) (total 19818 bytes) removed from the image.
 
 ==============================================================================
 
@@ -471,33 +551,34 @@ Image Symbol Table
     RESET                                    0x00000000   Section      644  startup.o(RESET)
     ../clib/microlib/division.c              0x00000000   Number         0  uldiv.o ABSOLUTE
     ../clib/microlib/division.c              0x00000000   Number         0  uidiv.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
+    ../clib/microlib/errno.c                 0x00000000   Number         0  errno.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
-    ../clib/microlib/longlong.c              0x00000000   Number         0  llshl.o ABSOLUTE
     ../clib/microlib/longlong.c              0x00000000   Number         0  llushr.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llshl.o ABSOLUTE
     ../clib/microlib/longlong.c              0x00000000   Number         0  llsshr.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfb.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfa.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf8.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf7.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf6.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf5.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf4.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf3.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf2.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf1.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf4.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfb.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf5.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf6.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf7.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf8.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfa.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf0.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf2.o ABSOLUTE
     ../clib/microlib/printf/stubs.s          0x00000000   Number         0  stubs.o ABSOLUTE
     ../clib/microlib/stdio/streams.c         0x00000000   Number         0  stdout.o ABSOLUTE
     ../clib/microlib/stubs.s                 0x00000000   Number         0  iusefp.o ABSOLUTE
@@ -506,10 +587,21 @@ Image Symbol Table
     ../fplib/microlib/fpdiv.c                0x00000000   Number         0  ddiv.o ABSOLUTE
     ../fplib/microlib/fpepilogue.c           0x00000000   Number         0  depilogue.o ABSOLUTE
     ../fplib/microlib/fpfix.c                0x00000000   Number         0  dfixul.o ABSOLUTE
+    ../fplib/microlib/fpfix.c                0x00000000   Number         0  dfixi.o ABSOLUTE
+    ../fplib/microlib/fpflt.c                0x00000000   Number         0  dfltui.o ABSOLUTE
+    ../fplib/microlib/fpflt.c                0x00000000   Number         0  dflti.o ABSOLUTE
     ../fplib/microlib/fpmul.c                0x00000000   Number         0  dmul.o ABSOLUTE
+    ../fplib/microlib/fpscalb.c              0x00000000   Number         0  dscalb.o ABSOLUTE
+    ../mathlib/log.c                         0x00000000   Number         0  log.o ABSOLUTE
+    ../mathlib/log.c                         0x00000000   Number         0  log_x.o ABSOLUTE
+    ../mathlib/log10.c                       0x00000000   Number         0  log10.o ABSOLUTE
+    ../mathlib/log10.c                       0x00000000   Number         0  log10_x.o ABSOLUTE
+    ../mathlib/poly.c                        0x00000000   Number         0  poly.o ABSOLUTE
+    ../mathlib/qnan.c                        0x00000000   Number         0  qnan.o ABSOLUTE
     PLL.c                                    0x00000000   Number         0  pll.o ABSOLUTE
     ST7735.c                                 0x00000000   Number         0  st7735.o ABSOLUTE
     ST7735TestMain.c                         0x00000000   Number         0  st7735testmain.o ABSOLUTE
+    cdcmple.s                                0x00000000   Number         0  cdcmple.o ABSOLUTE
     cdrcmple.s                               0x00000000   Number         0  cdrcmple.o ABSOLUTE
     dc.s                                     0x00000000   Number         0  dc.o ABSOLUTE
     fixed.c                                  0x00000000   Number         0  fixed.o ABSOLUTE
@@ -526,63 +618,45 @@ Image Symbol Table
     .ARM.Collect$$$$0000000F                 0x00000294   Section        0  entry11a.o(.ARM.Collect$$$$0000000F)
     .ARM.Collect$$$$00002712                 0x00000294   Section        4  entry2.o(.ARM.Collect$$$$00002712)
     __lit__00000000                          0x00000294   Data           4  entry2.o(.ARM.Collect$$$$00002712)
-    .text                                    0x00000298   Section        0  uidiv.o(.text)
-    .text                                    0x000002c4   Section        0  uldiv.o(.text)
-    .text                                    0x00000326   Section        0  iusefp.o(.text)
-    .text                                    0x00000326   Section        0  dadd.o(.text)
-    .text                                    0x00000474   Section        0  dmul.o(.text)
-    .text                                    0x00000558   Section        0  ddiv.o(.text)
-    .text                                    0x00000636   Section        0  dfixul.o(.text)
-    .text                                    0x00000668   Section       40  cdrcmple.o(.text)
-    .text                                    0x00000690   Section       36  init.o(.text)
-    .text                                    0x000006b4   Section        0  llshl.o(.text)
-    .text                                    0x000006d2   Section        0  llushr.o(.text)
-    .text                                    0x000006f2   Section        0  llsshr.o(.text)
-    .text                                    0x00000716   Section        0  depilogue.o(.text)
-    i.Delay1ms                               0x000007d4   Section        0  st7735.o(i.Delay1ms)
-    i.Output_Init                            0x000007f4   Section        0  st7735.o(i.Output_Init)
-    i.PLL_Init                               0x00000804   Section        0  pll.o(i.PLL_Init)
-    i.ST7735_DrawCharS                       0x00000880   Section        0  st7735.o(i.ST7735_DrawCharS)
-    i.ST7735_DrawPixel                       0x00000974   Section        0  st7735.o(i.ST7735_DrawPixel)
-    i.ST7735_DrawString                      0x000009c0   Section        0  st7735.o(i.ST7735_DrawString)
-    i.ST7735_FillRect                        0x00000a14   Section        0  st7735.o(i.ST7735_FillRect)
-    i.ST7735_FillScreen                      0x00000ac0   Section        0  st7735.o(i.ST7735_FillScreen)
-    i.ST7735_InitR                           0x00000ae4   Section        0  st7735.o(i.ST7735_InitR)
-    i.ST7735_OutChar                         0x00000b60   Section        0  st7735.o(i.ST7735_OutChar)
-    i.ST7735_SetCursor                       0x00000c34   Section        0  st7735.o(i.ST7735_SetCursor)
-    i.__0printf                              0x00000c54   Section        0  printfa.o(i.__0printf)
-    i.__scatterload_copy                     0x00000c74   Section       14  handlers.o(i.__scatterload_copy)
-    i.__scatterload_null                     0x00000c82   Section        2  handlers.o(i.__scatterload_null)
-    i.__scatterload_zeroinit                 0x00000c84   Section       14  handlers.o(i.__scatterload_zeroinit)
-    i._fp_digits                             0x00000c94   Section        0  printfa.o(i._fp_digits)
-    _fp_digits                               0x00000c95   Thumb Code   326  printfa.o(i._fp_digits)
-    i._printf_core                           0x00000df0   Section        0  printfa.o(i._printf_core)
-    _printf_core                             0x00000df1   Thumb Code  1762  printfa.o(i._printf_core)
-    i._printf_post_padding                   0x000014e0   Section        0  printfa.o(i._printf_post_padding)
-    _printf_post_padding                     0x000014e1   Thumb Code    38  printfa.o(i._printf_post_padding)
-    i._printf_pre_padding                    0x00001506   Section        0  printfa.o(i._printf_pre_padding)
-    _printf_pre_padding                      0x00001507   Thumb Code    48  printfa.o(i._printf_pre_padding)
-    i.commandList                            0x00001536   Section        0  st7735.o(i.commandList)
-    commandList                              0x00001537   Thumb Code    86  st7735.o(i.commandList)
-    i.commonInit                             0x0000158c   Section        0  st7735.o(i.commonInit)
-    commonInit                               0x0000158d   Thumb Code   340  st7735.o(i.commonInit)
-    i.fputc                                  0x00001710   Section        0  st7735.o(i.fputc)
-    i.main                                   0x00001720   Section        0  st7735testmain.o(i.main)
-    i.pushColor                              0x00001740   Section        0  st7735.o(i.pushColor)
-    pushColor                                0x00001741   Thumb Code    18  st7735.o(i.pushColor)
-    i.setAddrWindow                          0x00001754   Section        0  st7735.o(i.setAddrWindow)
-    setAddrWindow                            0x00001755   Thumb Code   106  st7735.o(i.setAddrWindow)
-    i.writecommand                           0x000017c8   Section        0  st7735.o(i.writecommand)
-    writecommand                             0x000017c9   Thumb Code    40  st7735.o(i.writecommand)
-    i.writedata                              0x000017f8   Section        0  st7735.o(i.writedata)
-    writedata                                0x000017f9   Thumb Code    24  st7735.o(i.writedata)
-    .constdata                               0x00001818   Section     2018  st7735.o(.constdata)
-    Font                                     0x00001818   Data        1275  st7735.o(.constdata)
-    Bcmd                                     0x00001d13   Data         103  st7735.o(.constdata)
-    Rcmd1                                    0x00001d7a   Data          59  st7735.o(.constdata)
-    Rcmd2green                               0x00001db5   Data          13  st7735.o(.constdata)
-    Rcmd2red                                 0x00001dc2   Data          13  st7735.o(.constdata)
-    Rcmd3                                    0x00001dcf   Data          43  st7735.o(.constdata)
+    .text                                    0x00000298   Section       36  init.o(.text)
+    i.Delay1ms                               0x000002bc   Section        0  st7735.o(i.Delay1ms)
+    i.PLL_Init                               0x000002dc   Section        0  pll.o(i.PLL_Init)
+    i.ST7735_Color565                        0x00000358   Section        0  st7735.o(i.ST7735_Color565)
+    i.ST7735_DrawCharS                       0x00000370   Section        0  st7735.o(i.ST7735_DrawCharS)
+    i.ST7735_DrawPixel                       0x00000464   Section        0  st7735.o(i.ST7735_DrawPixel)
+    i.ST7735_DrawString                      0x000004b0   Section        0  st7735.o(i.ST7735_DrawString)
+    i.ST7735_FillRect                        0x00000504   Section        0  st7735.o(i.ST7735_FillRect)
+    i.ST7735_FillScreen                      0x000005b0   Section        0  st7735.o(i.ST7735_FillScreen)
+    i.ST7735_InitR                           0x000005d4   Section        0  st7735.o(i.ST7735_InitR)
+    i.ST7735_OutChar                         0x00000650   Section        0  st7735.o(i.ST7735_OutChar)
+    i.ST7735_OutString                       0x00000724   Section        0  st7735.o(i.ST7735_OutString)
+    i.ST7735_PlotClear                       0x0000073c   Section        0  st7735.o(i.ST7735_PlotClear)
+    i.ST7735_PlotNext                        0x00000798   Section        0  st7735.o(i.ST7735_PlotNext)
+    i.ST7735_PlotPoints                      0x000007b8   Section        0  st7735.o(i.ST7735_PlotPoints)
+    i.ST7735_SetCursor                       0x00000864   Section        0  st7735.o(i.ST7735_SetCursor)
+    i.__scatterload_copy                     0x00000884   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x00000892   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x00000894   Section       14  handlers.o(i.__scatterload_zeroinit)
+    i.commandList                            0x000008a2   Section        0  st7735.o(i.commandList)
+    commandList                              0x000008a3   Thumb Code    86  st7735.o(i.commandList)
+    i.commonInit                             0x000008f8   Section        0  st7735.o(i.commonInit)
+    commonInit                               0x000008f9   Thumb Code   340  st7735.o(i.commonInit)
+    i.main                                   0x00000a7c   Section        0  st7735testmain.o(i.main)
+    i.pushColor                              0x00000aec   Section        0  st7735.o(i.pushColor)
+    pushColor                                0x00000aed   Thumb Code    18  st7735.o(i.pushColor)
+    i.setAddrWindow                          0x00000b00   Section        0  st7735.o(i.setAddrWindow)
+    setAddrWindow                            0x00000b01   Thumb Code   106  st7735.o(i.setAddrWindow)
+    i.writecommand                           0x00000b74   Section        0  st7735.o(i.writecommand)
+    writecommand                             0x00000b75   Thumb Code    40  st7735.o(i.writecommand)
+    i.writedata                              0x00000ba4   Section        0  st7735.o(i.writedata)
+    writedata                                0x00000ba5   Thumb Code    24  st7735.o(i.writedata)
+    .constdata                               0x00000bc4   Section     2018  st7735.o(.constdata)
+    Font                                     0x00000bc4   Data        1275  st7735.o(.constdata)
+    Bcmd                                     0x000010bf   Data         103  st7735.o(.constdata)
+    Rcmd1                                    0x00001126   Data          59  st7735.o(.constdata)
+    Rcmd2green                               0x00001161   Data          13  st7735.o(.constdata)
+    Rcmd2red                                 0x0000116e   Data          13  st7735.o(.constdata)
+    Rcmd3                                    0x0000117b   Data          43  st7735.o(.constdata)
     .data                                    0x20000000   Section       44  st7735.o(.data)
     _width                                   0x2000000a   Data           2  st7735.o(.data)
     _height                                  0x2000000c   Data           2  st7735.o(.data)
@@ -590,7 +664,6 @@ Image Symbol Table
     RowStart                                 0x20000015   Data           1  st7735.o(.data)
     Rotation                                 0x20000016   Data           1  st7735.o(.data)
     TabColor                                 0x20000017   Data           1  st7735.o(.data)
-    .data                                    0x2000002c   Section        4  stdout.o(.data)
     STACK                                    0x20000030   Section     1024  startup.o(STACK)
     StackMem                                 0x20000030   Data           0  startup.o(STACK)
 
@@ -598,7 +671,7 @@ Image Symbol Table
 
     Symbol Name                              Value     Ov Type        Size  Object(Section)
 
-    BuildAttributes$$THM_ISAv4$E$P$D$K$B$S$7EM$PE$A:L22UL41UL21$X:L11$S22US41US21$IEEE1$IW$USESV6$~STKCKD$USESV7$~SHL$OSPACE$ROPI$EBA8$MICROLIB$REQ8$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    BuildAttributes$$THM_ISAv4$E$P$D$K$B$S$7EM$PE$A:L22UL41UL21$X:L11$S22US41US21$IEEE1$IW$USESV6$~STKCKD$USESV7$~SHL$OTIME$ROPI$IEEEJ$EBA8$MICROLIB$REQ8$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
     __ARM_use_no_argv                        0x00000000   Number         0  st7735testmain.o ABSOLUTE
     __Vectors                                0x00000000   Data           0  startup.o(RESET)
     _printf_a                                0x00000000   Number         0  stubs.o ABSOLUTE
@@ -780,51 +853,30 @@ Image Symbol Table
     _main_init                               0x0000028d   Thumb Code     0  entry9a.o(.ARM.Collect$$$$0000000B)
     __rt_final_cpp                           0x00000295   Thumb Code     0  entry10a.o(.ARM.Collect$$$$0000000D)
     __rt_final_exit                          0x00000295   Thumb Code     0  entry11a.o(.ARM.Collect$$$$0000000F)
-    __aeabi_uidiv                            0x00000299   Thumb Code     0  uidiv.o(.text)
-    __aeabi_uidivmod                         0x00000299   Thumb Code    44  uidiv.o(.text)
-    __aeabi_uldivmod                         0x000002c5   Thumb Code    98  uldiv.o(.text)
-    __I$use$fp                               0x00000327   Thumb Code     0  iusefp.o(.text)
-    __aeabi_dadd                             0x00000327   Thumb Code   322  dadd.o(.text)
-    __aeabi_dsub                             0x00000469   Thumb Code     6  dadd.o(.text)
-    __aeabi_drsub                            0x0000046f   Thumb Code     6  dadd.o(.text)
-    __aeabi_dmul                             0x00000475   Thumb Code   228  dmul.o(.text)
-    __aeabi_ddiv                             0x00000559   Thumb Code   222  ddiv.o(.text)
-    __aeabi_d2ulz                            0x00000637   Thumb Code    48  dfixul.o(.text)
-    __aeabi_cdrcmple                         0x00000669   Thumb Code    38  cdrcmple.o(.text)
-    __scatterload                            0x00000691   Thumb Code    28  init.o(.text)
-    __scatterload_rt2                        0x00000691   Thumb Code     0  init.o(.text)
-    __aeabi_llsl                             0x000006b5   Thumb Code    30  llshl.o(.text)
-    _ll_shift_l                              0x000006b5   Thumb Code     0  llshl.o(.text)
-    __aeabi_llsr                             0x000006d3   Thumb Code    32  llushr.o(.text)
-    _ll_ushift_r                             0x000006d3   Thumb Code     0  llushr.o(.text)
-    __aeabi_lasr                             0x000006f3   Thumb Code    36  llsshr.o(.text)
-    _ll_sshift_r                             0x000006f3   Thumb Code     0  llsshr.o(.text)
-    _double_round                            0x00000717   Thumb Code    26  depilogue.o(.text)
-    _double_epilogue                         0x00000731   Thumb Code   164  depilogue.o(.text)
-    Delay1ms                                 0x000007d5   Thumb Code    32  st7735.o(i.Delay1ms)
-    Output_Init                              0x000007f5   Thumb Code    16  st7735.o(i.Output_Init)
-    PLL_Init                                 0x00000805   Thumb Code   118  pll.o(i.PLL_Init)
-    ST7735_DrawCharS                         0x00000881   Thumb Code   232  st7735.o(i.ST7735_DrawCharS)
-    ST7735_DrawPixel                         0x00000975   Thumb Code    68  st7735.o(i.ST7735_DrawPixel)
-    ST7735_DrawString                        0x000009c1   Thumb Code    84  st7735.o(i.ST7735_DrawString)
-    ST7735_FillRect                          0x00000a15   Thumb Code   164  st7735.o(i.ST7735_FillRect)
-    ST7735_FillScreen                        0x00000ac1   Thumb Code    28  st7735.o(i.ST7735_FillScreen)
-    ST7735_InitR                             0x00000ae5   Thumb Code    90  st7735.o(i.ST7735_InitR)
-    ST7735_OutChar                           0x00000b61   Thumb Code   176  st7735.o(i.ST7735_OutChar)
-    ST7735_SetCursor                         0x00000c35   Thumb Code    22  st7735.o(i.ST7735_SetCursor)
-    __0printf                                0x00000c55   Thumb Code    22  printfa.o(i.__0printf)
-    __1printf                                0x00000c55   Thumb Code     0  printfa.o(i.__0printf)
-    __2printf                                0x00000c55   Thumb Code     0  printfa.o(i.__0printf)
-    __c89printf                              0x00000c55   Thumb Code     0  printfa.o(i.__0printf)
-    printf                                   0x00000c55   Thumb Code     0  printfa.o(i.__0printf)
-    __scatterload_copy                       0x00000c75   Thumb Code    14  handlers.o(i.__scatterload_copy)
-    __scatterload_null                       0x00000c83   Thumb Code     2  handlers.o(i.__scatterload_null)
-    __scatterload_zeroinit                   0x00000c85   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
-    fputc                                    0x00001711   Thumb Code    16  st7735.o(i.fputc)
-    main                                     0x00001721   Thumb Code    18  st7735testmain.o(i.main)
-    dBfs                                     0x00001dfa   Data         512  st7735.o(.constdata)
-    Region$$Table$$Base                      0x00001ffc   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x0000201c   Number         0  anon$$obj.o(Region$$Table)
+    __scatterload                            0x00000299   Thumb Code    28  init.o(.text)
+    __scatterload_rt2                        0x00000299   Thumb Code     0  init.o(.text)
+    Delay1ms                                 0x000002bd   Thumb Code    32  st7735.o(i.Delay1ms)
+    PLL_Init                                 0x000002dd   Thumb Code   118  pll.o(i.PLL_Init)
+    ST7735_Color565                          0x00000359   Thumb Code    24  st7735.o(i.ST7735_Color565)
+    ST7735_DrawCharS                         0x00000371   Thumb Code   232  st7735.o(i.ST7735_DrawCharS)
+    ST7735_DrawPixel                         0x00000465   Thumb Code    68  st7735.o(i.ST7735_DrawPixel)
+    ST7735_DrawString                        0x000004b1   Thumb Code    84  st7735.o(i.ST7735_DrawString)
+    ST7735_FillRect                          0x00000505   Thumb Code   164  st7735.o(i.ST7735_FillRect)
+    ST7735_FillScreen                        0x000005b1   Thumb Code    28  st7735.o(i.ST7735_FillScreen)
+    ST7735_InitR                             0x000005d5   Thumb Code    90  st7735.o(i.ST7735_InitR)
+    ST7735_OutChar                           0x00000651   Thumb Code   176  st7735.o(i.ST7735_OutChar)
+    ST7735_OutString                         0x00000725   Thumb Code    22  st7735.o(i.ST7735_OutString)
+    ST7735_PlotClear                         0x0000073d   Thumb Code    74  st7735.o(i.ST7735_PlotClear)
+    ST7735_PlotNext                          0x00000799   Thumb Code    28  st7735.o(i.ST7735_PlotNext)
+    ST7735_PlotPoints                        0x000007b9   Thumb Code   154  st7735.o(i.ST7735_PlotPoints)
+    ST7735_SetCursor                         0x00000865   Thumb Code    22  st7735.o(i.ST7735_SetCursor)
+    __scatterload_copy                       0x00000885   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x00000893   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x00000895   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    main                                     0x00000a7d   Thumb Code    78  st7735testmain.o(i.main)
+    dBfs                                     0x000011a6   Data         512  st7735.o(.constdata)
+    Region$$Table$$Base                      0x000013a8   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x000013c8   Number         0  anon$$obj.o(Region$$Table)
     StX                                      0x20000000   Data           4  st7735.o(.data)
     StY                                      0x20000004   Data           4  st7735.o(.data)
     StTextColor                              0x20000008   Data           2  st7735.o(.data)
@@ -834,7 +886,6 @@ Image Symbol Table
     Ymin                                     0x20000020   Data           4  st7735.o(.data)
     X                                        0x20000024   Data           4  st7735.o(.data)
     Yrange                                   0x20000028   Data           4  st7735.o(.data)
-    __stdout                                 0x2000002c   Data           4  stdout.o(.data)
     __initial_sp                             0x20000430   Data           0  startup.o(STACK)
 
 
@@ -845,82 +896,67 @@ Memory Map of the image
 
   Image Entry point : 0x0000026d
 
-  Load Region LR_1 (Base: 0x00000000, Size: 0x0000204c, Max: 0xffffffff, ABSOLUTE)
+  Load Region LR_1 (Base: 0x00000000, Size: 0x000013f4, Max: 0xffffffff, ABSOLUTE)
 
-    Execution Region ER_RO (Base: 0x00000000, Size: 0x0000201c, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RO (Base: 0x00000000, Size: 0x000013c8, Max: 0xffffffff, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x00000000   0x00000284   Code   RO            3  * RESET               startup.o
-    0x00000284   0x00000000   Code   RO          436  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
-    0x00000284   0x00000004   Code   RO          702    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
-    0x00000288   0x00000004   Code   RO          705    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
-    0x0000028c   0x00000000   Code   RO          707    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
-    0x0000028c   0x00000000   Code   RO          709    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
-    0x0000028c   0x00000008   Code   RO          710    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
-    0x00000294   0x00000000   Code   RO          712    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
-    0x00000294   0x00000000   Code   RO          714    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
-    0x00000294   0x00000004   Code   RO          703    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
-    0x00000298   0x0000002c   Code   RO          717    .text               mc_w.l(uidiv.o)
-    0x000002c4   0x00000062   Code   RO          719    .text               mc_w.l(uldiv.o)
-    0x00000326   0x00000000   Code   RO          721    .text               mc_w.l(iusefp.o)
-    0x00000326   0x0000014e   Code   RO          722    .text               mf_w.l(dadd.o)
-    0x00000474   0x000000e4   Code   RO          724    .text               mf_w.l(dmul.o)
-    0x00000558   0x000000de   Code   RO          726    .text               mf_w.l(ddiv.o)
-    0x00000636   0x00000030   Code   RO          728    .text               mf_w.l(dfixul.o)
-    0x00000666   0x00000002   PAD
-    0x00000668   0x00000028   Code   RO          730    .text               mf_w.l(cdrcmple.o)
-    0x00000690   0x00000024   Code   RO          732    .text               mc_w.l(init.o)
-    0x000006b4   0x0000001e   Code   RO          734    .text               mc_w.l(llshl.o)
-    0x000006d2   0x00000020   Code   RO          736    .text               mc_w.l(llushr.o)
-    0x000006f2   0x00000024   Code   RO          738    .text               mc_w.l(llsshr.o)
-    0x00000716   0x000000be   Code   RO          740    .text               mf_w.l(depilogue.o)
-    0x000007d4   0x00000020   Code   RO           34    i.Delay1ms          st7735.o
-    0x000007f4   0x00000010   Code   RO           37    i.Output_Init       st7735.o
-    0x00000804   0x0000007c   Code   RO           12    i.PLL_Init          pll.o
-    0x00000880   0x000000f4   Code   RO           43    i.ST7735_DrawCharS  st7735.o
-    0x00000974   0x0000004c   Code   RO           46    i.ST7735_DrawPixel  st7735.o
-    0x000009c0   0x00000054   Code   RO           47    i.ST7735_DrawString  st7735.o
-    0x00000a14   0x000000ac   Code   RO           48    i.ST7735_FillRect   st7735.o
-    0x00000ac0   0x00000024   Code   RO           49    i.ST7735_FillScreen  st7735.o
-    0x00000ae4   0x0000007c   Code   RO           51    i.ST7735_InitR      st7735.o
-    0x00000b60   0x000000d4   Code   RO           53    i.ST7735_OutChar    st7735.o
-    0x00000c34   0x00000020   Code   RO           64    i.ST7735_SetCursor  st7735.o
-    0x00000c54   0x00000020   Code   RO          672    i.__0printf         mc_w.l(printfa.o)
-    0x00000c74   0x0000000e   Code   RO          744    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x00000c82   0x00000002   Code   RO          745    i.__scatterload_null  mc_w.l(handlers.o)
-    0x00000c84   0x0000000e   Code   RO          746    i.__scatterload_zeroinit  mc_w.l(handlers.o)
-    0x00000c92   0x00000002   PAD
-    0x00000c94   0x0000015c   Code   RO          679    i._fp_digits        mc_w.l(printfa.o)
-    0x00000df0   0x000006f0   Code   RO          680    i._printf_core      mc_w.l(printfa.o)
-    0x000014e0   0x00000026   Code   RO          681    i._printf_post_padding  mc_w.l(printfa.o)
-    0x00001506   0x00000030   Code   RO          682    i._printf_pre_padding  mc_w.l(printfa.o)
-    0x00001536   0x00000056   Code   RO           68    i.commandList       st7735.o
-    0x0000158c   0x00000184   Code   RO           69    i.commonInit        st7735.o
-    0x00001710   0x00000010   Code   RO           73    i.fputc             st7735.o
-    0x00001720   0x00000020   Code   RO          314    i.main              st7735testmain.o
-    0x00001740   0x00000012   Code   RO           74    i.pushColor         st7735.o
-    0x00001752   0x00000002   PAD
-    0x00001754   0x00000074   Code   RO           75    i.setAddrWindow     st7735.o
-    0x000017c8   0x00000030   Code   RO           76    i.writecommand      st7735.o
-    0x000017f8   0x00000020   Code   RO           77    i.writedata         st7735.o
-    0x00001818   0x000007e2   Data   RO           79    .constdata          st7735.o
-    0x00001ffa   0x00000002   PAD
-    0x00001ffc   0x00000020   Data   RO          742    Region$$Table       anon$$obj.o
+    0x00000284   0x00000000   Code   RO          448  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x00000284   0x00000004   Code   RO          730    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
+    0x00000288   0x00000004   Code   RO          733    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x0000028c   0x00000000   Code   RO          735    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
+    0x0000028c   0x00000000   Code   RO          737    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
+    0x0000028c   0x00000008   Code   RO          738    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
+    0x00000294   0x00000000   Code   RO          740    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
+    0x00000294   0x00000000   Code   RO          742    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
+    0x00000294   0x00000004   Code   RO          731    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
+    0x00000298   0x00000024   Code   RO          776    .text               mc_w.l(init.o)
+    0x000002bc   0x00000020   Code   RO           34    i.Delay1ms          st7735.o
+    0x000002dc   0x0000007c   Code   RO           12    i.PLL_Init          pll.o
+    0x00000358   0x00000018   Code   RO           40    i.ST7735_Color565   st7735.o
+    0x00000370   0x000000f4   Code   RO           43    i.ST7735_DrawCharS  st7735.o
+    0x00000464   0x0000004c   Code   RO           46    i.ST7735_DrawPixel  st7735.o
+    0x000004b0   0x00000054   Code   RO           47    i.ST7735_DrawString  st7735.o
+    0x00000504   0x000000ac   Code   RO           48    i.ST7735_FillRect   st7735.o
+    0x000005b0   0x00000024   Code   RO           49    i.ST7735_FillScreen  st7735.o
+    0x000005d4   0x0000007c   Code   RO           51    i.ST7735_InitR      st7735.o
+    0x00000650   0x000000d4   Code   RO           53    i.ST7735_OutChar    st7735.o
+    0x00000724   0x00000016   Code   RO           54    i.ST7735_OutString  st7735.o
+    0x0000073a   0x00000002   PAD
+    0x0000073c   0x0000005c   Code   RO           57    i.ST7735_PlotClear  st7735.o
+    0x00000798   0x00000020   Code   RO           59    i.ST7735_PlotNext   st7735.o
+    0x000007b8   0x000000ac   Code   RO           62    i.ST7735_PlotPoints  st7735.o
+    0x00000864   0x00000020   Code   RO           64    i.ST7735_SetCursor  st7735.o
+    0x00000884   0x0000000e   Code   RO          786    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x00000892   0x00000002   Code   RO          787    i.__scatterload_null  mc_w.l(handlers.o)
+    0x00000894   0x0000000e   Code   RO          788    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x000008a2   0x00000056   Code   RO           68    i.commandList       st7735.o
+    0x000008f8   0x00000184   Code   RO           69    i.commonInit        st7735.o
+    0x00000a7c   0x00000070   Code   RO          314    i.main              st7735testmain.o
+    0x00000aec   0x00000012   Code   RO           74    i.pushColor         st7735.o
+    0x00000afe   0x00000002   PAD
+    0x00000b00   0x00000074   Code   RO           75    i.setAddrWindow     st7735.o
+    0x00000b74   0x00000030   Code   RO           76    i.writecommand      st7735.o
+    0x00000ba4   0x00000020   Code   RO           77    i.writedata         st7735.o
+    0x00000bc4   0x000007e2   Data   RO           79    .constdata          st7735.o
+    0x000013a6   0x00000002   PAD
+    0x000013a8   0x00000020   Data   RO          784    Region$$Table       anon$$obj.o
 
 
-    Execution Region ER_RW (Base: 0x20000000, Size: 0x00000030, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RW (Base: 0x20000000, Size: 0x0000002c, Max: 0xffffffff, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x20000000   0x0000002c   Data   RW           80    .data               st7735.o
-    0x2000002c   0x00000004   Data   RW          716    .data               mc_w.l(stdout.o)
 
 
-    Execution Region ER_ZI (Base: 0x20000030, Size: 0x00000400, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_ZI (Base: 0x2000002c, Size: 0x00000404, Max: 0xffffffff, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
+    0x2000002c   0x00000004   PAD
     0x20000030   0x00000400   Zero   RW            1    STACK               startup.o
 
 
@@ -931,15 +967,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       124          6          0          0          0       4607   pll.o
-      1732        190       2018         44          0      14009   st7735.o
-        32         14          0          0          0        403   st7735testmain.o
-       644        620          0          0       1024        712   startup.o
+       124          6          0          0          0       4595   pll.o
+      2042        230       2018         44          0      14161   st7735.o
+       112         34          0          0          0        463   st7735testmain.o
+       644        620          0          0       1024        700   startup.o
 
     ----------------------------------------------------------------------
-      2534        830       2052         44       1024      19731   Object Totals
+      2926        890       2052         44       1028      19919   Object Totals
          0          0         32          0          0          0   (incl. Generated)
-         2          0          2          0          0          0   (incl. Padding)
+         4          0          2          0          4          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -955,34 +991,19 @@ Image component sizes
          8          4          0          0          0          0   entry9a.o
         30          0          0          0          0          0   handlers.o
         36          8          0          0          0         68   init.o
-         0          0          0          0          0          0   iusefp.o
-        30          0          0          0          0         68   llshl.o
-        36          0          0          0          0         68   llsshr.o
-        32          0          0          0          0         68   llushr.o
-      2242         90          0          0          0        444   printfa.o
-         0          0          0          4          0          0   stdout.o
-        44          0          0          0          0         80   uidiv.o
-        98          0          0          0          0         92   uldiv.o
-        40          2          0          0          0         68   cdrcmple.o
-       334          0          0          0          0        148   dadd.o
-       222          0          0          0          0        100   ddiv.o
-       190          0          0          0          0        176   depilogue.o
-        48          0          0          0          0         68   dfixul.o
-       228          0          0          0          0         96   dmul.o
 
     ----------------------------------------------------------------------
-      3634        108          0          4          0       1544   Library Totals
-         4          0          0          0          0          0   (incl. Padding)
+        86         16          0          0          0         68   Library Totals
+         0          0          0          0          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Name
 
-      2568        106          0          4          0        888   mc_w.l
-      1062          2          0          0          0        656   mf_w.l
+        86         16          0          0          0         68   mc_w.l
 
     ----------------------------------------------------------------------
-      3634        108          0          4          0       1544   Library Totals
+        86         16          0          0          0         68   Library Totals
 
     ----------------------------------------------------------------------
 
@@ -991,15 +1012,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      6168        938       2052         48       1024      19611   Grand Totals
-      6168        938       2052         48       1024      19611   ELF Image Totals
-      6168        938       2052         48          0          0   ROM Totals
+      3012        906       2052         44       1028      18999   Grand Totals
+      3012        906       2052         44       1028      18999   ELF Image Totals
+      3012        906       2052         44          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 8220 (   8.03kB)
+    Total RO  Size (Code + RO Data)                 5064 (   4.95kB)
     Total RW  Size (RW Data + ZI Data)              1072 (   1.05kB)
-    Total ROM Size (Code + RO Data + RW Data)       8268 (   8.07kB)
+    Total ROM Size (Code + RO Data + RW Data)       5108 (   4.99kB)
 
 ==============================================================================
 
