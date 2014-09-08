@@ -33,6 +33,7 @@
 // Gnd (pin 1) connected to ground
 #include <stdio.h>
 #include <stdint.h>
+#include "fixed.h"
 #include "ST7735.h"
 #include "PLL.h"
 #include "inc/tm4c123gh6pm.h"
@@ -464,14 +465,31 @@ const uint16_t Logo[] = {
  0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF
 };
 
+/*This main function was written to test the fixed point functions in fixed.c */
 
-int main(void){
+int main (void){
+	PLL_Init();
+	Output_Init();
+	Fixed_sDecOut3(9000);
+	printf("\n");
+	Fixed_sDecOut3(00000);
+	printf("\n");
+	Fixed_sDecOut3(100);
+	printf("\n");
+	Fixed_sDecOut3(-99);
+	printf("\n");
+	while(1){
+	}
+}
+
+int main1(void){
   PLL_Init();
   Output_Init();
   printf("hello world");
   while(1){
   }
 } 
+
 int main2(void){uint32_t j;
   PLL_Init();
   ST7735_InitR(INITR_REDTAB);
