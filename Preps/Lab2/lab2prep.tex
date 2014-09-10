@@ -1,0 +1,162 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Short Sectioned Assignment
+% LaTeX Template
+% Version 1.0 (5/5/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Frits Wenneker (http://www.howtotex.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% EE 445L @ The University of Texas at Austin
+% Lab 2 Prep
+% Joshua Bryant (jmb6357)
+% James Morris (jsm3288)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[paper=a4, fontsize=11pt]{scrartcl} % A4 paper and 11pt font size
+
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
+\usepackage[english]{babel} % English language/hyphenation
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+
+\usepackage{color}
+
+\usepackage{sectsty} % Allows customizing section commands
+\allsectionsfont{\centering \normalfont\scshape} % Make all sections centered, the default font and small caps
+
+\usepackage{fancyhdr} % Custom headers and footers
+\pagestyle{fancyplain} % Makes all pages in the document conform to the custom headers and footers
+\fancyhead{} % No page header - if you want one, create it in the same way as the footers below
+\fancyfoot[L]{} % Empty left footer
+\fancyfoot[C]{} % Empty center footer
+\fancyfoot[R]{\thepage} % Page numbering for right footer
+\renewcommand{\headrulewidth}{0pt} % Remove header underlines
+\renewcommand{\footrulewidth}{0pt} % Remove footer underlines
+\setlength{\headheight}{13.6pt} % Customize the height of the header
+
+\numberwithin{equation}{section} % Number equations within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{figure}{section} % Number figures within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+\newcommand{\hl}[1]{\colorbox{yellow}{#1}}
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+
+\title{	
+\normalfont \normalsize 
+\textsc{The University of Texas at Austin\\ EE 445L: Embedded Systems Design Lab} \\ [25pt] % Your university, school and/or department name(s)
+\horrule{0.5pt} \\[0.1cm] % Thin top horizontal rule
+\Large Lab 2 Prep \\ % The assignment title
+\horrule{2pt} \\[0.2cm] % Thick bottom horizontal rule
+}
+
+\author{Joshua Bryant\\
+		(jmb6357)
+		\and
+		James Morris\\
+		(jsm3288)}
+
+\date{\normalsize\today} % Today's date or a custom date
+
+\begin{document}
+
+\maketitle % Print the title
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 1
+%----------------------------------------------------------------------------------------
+
+\begin{enumerate}
+\item %Problem 1
+	RxGetPt is located at 0x20000010 and RxPutPt is located at 0x2000000c.
+
+\item %Problem 2
+	\begin{enumerate}
+		\item %Problem 2a
+			\textbf{datapt} is an output parameter and is a call by reference. At the time of the call, \textbf{datapt} is stored on the stack.
+			
+		\item %Problem 2b
+			0x00FC is stored at 0x00000A34. It is little endian. The memory address of what is being loaded is stored in R0 after the first LDR. The value at the previously loaded memory address is loaded into R0 after the second LDR is executed.
+			
+		\item %Problem 2c
+			The difference between \textbf{MOV} and \textbf{MOVS} is that the condition code flags are updated on the result of \textbf{MOVS} and the condition code flags are not updated on the result of \textbf{MOV}.
+			
+		\item %Problem 2d
+			The difference between \textbf{LDR} and \textbf{LDRB} is that \textbf{LDRB} zero extends to 32 bits on load.
+			
+		\item %Problem 2e
+			\textbf{LDR} is load and \textbf{STR} is store. Both are with immediate offset, pre-indexed immediate offset, or post-indexed immediate offset.
+			
+		\item %Problem 2f
+			\textbf{RET} is the return from subroutine command with the return address stored in a general purpose register specified by an operand for the opcode.
+			
+		\item %Problem 2g
+			A return parameter is passed by being stored in register r0. The parameter is stored in r0 at the time of the return.
+	\end{enumerate}
+
+\item %Problem 3
+	The \textbf{StartCritical} and \textbf{EndCritical} are both added to \textbf{RxFifo\_Init} to prevent interrupts from occurring during the assignment of the pointer variables for the FIFO to guarantee successful FIFO initialization. When \textbf{RxFifo\_Init} returns, interrupts are either enabled or disabled, depending on if they were enabled or disabled before entering \textbf{RxFifo\_Init}. The reason why is \textbf{EndCritical} restores the I bit to the value it had upon entering \textbf{RxFifo\_Init}.
+
+\item %Problem 4
+	%code copy and pasted from instructions
+		\hl{0x000009C4 4601 MOV r1,r0} \\
+		\hl{0x000009C6 481D LDR r0,[pc,\#116] ;} \\
+		@0x0A3C \\
+		\hl{0x000009C8 6800 LDR r0,[r0,\#0x00]} \\
+		\hl{0x000009CA 4A1B LDR r2,[pc,\#108] ;} \\
+		@0x0A38 \\
+		\hl{0x000009CC 6812 LDR r2,[r2,\#0x00]} \\
+		\hl{0x000009CE 4290 CMP r0,r2} \\
+		\hl{0x000009D0 D101 BNE 0x000009D6} \\
+		0x000009D2 2000 MOVS r0,\#0x00 \\
+		\hl{0x000009D4 4770 BX lr} \\
+		\hl{0x000009D6 4818 LDR r0,[pc,\#96] ; @0x0A38} \\
+		\hl{0x000009D8 6800 LDR r0,[r0,\#0x00]} \\
+		\hl{0x000009DA 7800 LDRB r0,[r0,\#0x00]} \\
+		\hl{0x000009DC 7008 STRB r0,[r1,\#0x00]} \\
+		\hl{0x000009DE 4816 LDR r0,[pc,\#88] ; @0x0A38} \\
+		\hl{0x000009E0 6800 LDR r0,[r0,\#0x00]} \\
+		\hl{0x000009E2 1C40 ADDS r0,r0,\#1} \\
+		\hl{0x000009E4 4A14 LDR r2,[pc,\#80] ; @0x0A38} \\
+		\hl{0x000009E6 6010 STR r0,[r2,\#0x00]} \\
+		\hl{0x000009E8 4610 MOV r0,r2} \\
+		\hl{0x000009EA 6802 LDR r2,[r0,\#0x00]} \\
+		\hl{0x000009EC 4811 LDR r0,[pc,\#68] ; @0x0A34} \\
+		\hl{0x000009EE 3020 ADDS r0,r0,\#0x20} \\
+		\hl{0x000009F0 4282 CMP r2,r0} \\
+		\hl{0x000009F2 D102 BNE 0x000009FA} \\
+		0x000009F4 3820 SUBS r0,r0,\#0x20 \\
+		0x000009F6 4A10 LDR r2,[pc,\#64] ; @0x0A38 \\
+		0x000009F8 6010 STR r0,[r2,\#0x00] \\
+		\hl{0x000009FA 2001 MOVS r0,\#0x01} \\
+		\hl{0x000009FC E7EA B 0x000009D4} \\
+		0x00000A34 00FC LSLS r4,r7,\#3 \\\\
+		0x00000A36 2000 MOVS r0,\#0x00 \\
+		0x00000A38 0034 MOVS r4,r6 \\
+		0x00000A3A 2000 MOVS r0,\#0x00 \\
+		0x00000A3C 0030 MOVS r0,r6 \\
+		0x00000A3E 2000 MOVS r0,\#0x00\\\\
+		Given an operating frequency of 80MHz, then the above highlighted code should take $\sim$0.475 $\mu$s to execute.
+
+\end{enumerate}
+
+
+
+\end{document}
