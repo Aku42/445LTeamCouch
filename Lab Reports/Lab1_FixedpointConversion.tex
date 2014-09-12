@@ -1,0 +1,103 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% University/School Laboratory Report
+% LaTeX Template
+% Version 3.1 (25/3/14)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Linux and Unix Users Group at Virginia Tech Wiki 
+% (https://vtluug.org/wiki/Example_LaTeX_chem_lab_report)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath} % Required for some math elements 
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+%\renewcommand{\labelenumi}{\alph{enumi}.} % Make numbering in the enumerate environment by letter rather than number (e.g. section 6)
+
+%\usepackage{times} % Uncomment to use the Times New Roman font
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\title{\begin{LARGE}
+	\textbf{EE 445L - Lab 1: Fixed-point Output}
+\end{LARGE}} % Title
+
+\author{Joshua Bryant \\ jmb6357 \and James Morris \\ jsm3288} % Author name
+
+\date{\today} % Date for the report
+
+\begin{document}
+
+\maketitle % Insert the title, author and date
+
+%----------------------------------------------------------------------------------------
+%	SECTION 1 Objectives
+%----------------------------------------------------------------------------------------
+
+\section{Objective}
+
+The main objectives of this lab were as follows: to introduce and ourselves with the provided lab equipment, to familiarize ourselves with Keil $\mu$Vision4 for the ARM Cortex M processor, to develop a set of useful fixed-point output routines that we can use in future labs, and to re-familiarize ourselves with fixed-point arithmetic and the differences in properties between fixed-point and floating-point. 
+
+ 
+%----------------------------------------------------------------------------------------
+%	SECTION 2 Hardware Design
+%----------------------------------------------------------------------------------------
+
+%\section{Hardware Design} %not needed for this lab.
+
+%----------------------------------------------------------------------------------------
+%	SECTION 3 Software Design
+%----------------------------------------------------------------------------------------
+
+%\section{Software Design} %not needed for this lab. Just upload files to Canvas
+
+%----------------------------------------------------------------------------------------
+%	SECTION 4 Measurement Data
+%----------------------------------------------------------------------------------------
+
+%\section{Measurement Data} %not needed for this lab.
+
+%----------------------------------------------------------------------------------------
+%	SECTION 5 Analysis and Discussion
+%----------------------------------------------------------------------------------------
+
+\section{Analysis and Discussion}
+
+\begin{enumerate}
+\item %Question 1
+It is good to design fixed.c to not be tied specifically to any low-level display routines to allow the code to remain portable. For instance, instead of calling the hardware specific function \textbf{ST7735\_OutString()}, calling the generic \textbf{printf()} function allows whatever code calling our functions to specify what output is appropriate.
+
+\item %Question 2
+Guaranteeing that the decimal point is in the same physical position regardless of the number being printed is important for visual formatting on output screens. A standard format allows for easy reading of the information and for any form of formatted output where one may only want to modify the integer portion of the number and not the mantissa.
+
+\item %Question 3
+Fixed point numbers are useful if higher precision is needed in a number as well as less hardware complexity being required to operate on fixed point numbers. Floating point should be used if a larger range is required.
+
+\item %Question 4
+Binary fixed-point is preferable for scaling values by powers of 2 since this results in fast bit-shifts in the hardware. Binary fixed-point also has the benefit of being able to exactly represent fractional powers of two. Decimal fixed-point is useful for exactly representing fractional powers of 10 since these can only be approximated by binary fixed-point.
+
+\item %Question 5
+One example of an application for fixed-point would be real-time digital signal processing where using a microcontroller that supports floating point arithmetic would be too costly to be commercially viable.
+
+\item %Question 6
+Yes, it is possible to use floating-point on the ARM Cortex M4. It would require using an M4F processor and would require more complicated hardware in the chip used. Using floating point, in general, is also slower than using fixed-point arithmetic.
+
+\end{enumerate}
+
+\end{document}
