@@ -24,6 +24,8 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{amsmath} % Required for some math elements 
 \usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{subcaption}
 
 \setlength\parindent{0pt} % Removes all indentation from paragraphs
 
@@ -83,7 +85,56 @@
 %----------------------------------------------------------------------------------------
 
 \section{Measurement Data} %Mostly screenshots from the o-scopes in the lab, get these from James
-
+	\subsection{Part B and C}
+		\centering		
+		\begin{figure}[h]
+			\centering
+			\begin{subfigure}{0.45\textwidth}
+				\includegraphics[keepaspectratio, width=\textwidth]{Lab2Screens/Lab2PartB1.png}
+				\caption{Part B screen shot}
+				\label{fig:SS_B}
+			\end{subfigure}
+			\hfill
+			\begin{subfigure}{0.45\textwidth}
+				\includegraphics[keepaspectratio, width=\textwidth]{Lab2Screens/Lab2PartC5}	
+				\caption{Part C screen shot}
+				\label{fig:SS_C}
+			\end{subfigure}
+			\caption{In both images, line 2 shows the interrupt occurring with two successive interrupts}
+			\label{fig:SS_B&C}			
+			\hfill		
+		\end{figure}
+		\raggedright		
+		
+	\subsection{Part E}
+		\centering
+		\begin{figure}[h]
+			\centering
+			\begin{subfigure}{0.45\textwidth}
+				\includegraphics[keepaspectratio, width=\textwidth]{Lab2Screens/Lab2PartE1}
+				\caption{Execution time of RxFifo\_Get}
+				\label{fig:SS_E1}
+			\end{subfigure}
+			\hfill
+			\begin{subfigure}{0.45\textwidth}
+				\includegraphics[keepaspectratio, width=\textwidth]{Lab2Screens/Lab2PartE2}
+				\caption{Execution time of toggling pins}
+				\label{fig:SS_E2}
+			\end{subfigure}
+			\label{fig:SS_E}
+			\hfill
+		\end{figure}
+		\raggedright
+		The SysTick technique had the benefit of providing not only the execution time of each cycle of RxFifo\_Get but also additional data that can be useful when trying to debug issues with code. This comes at the expense of being, at best, minimally intrusive. The scope technique has the advantage of being less intrusive to the program than the SysTick techniques but its downside is not providing as much data for use in debugging code.
+		
+	\subsection{Part H}
+		\centering
+		\begin{figure}[h]
+			\centering
+			\includegraphics[keepaspectratio, width=0.6\textwidth]{Lab2Screens/Lab2PartH}
+			\caption{Screen shot of oscilloscope showing two interrupts}
+		\end{figure}
+		\raggedright
 %----------------------------------------------------------------------------------------
 %	SECTION 5 Analysis and Discussion
 %----------------------------------------------------------------------------------------
@@ -92,7 +143,7 @@
 
 \begin{enumerate}
 	\item %Question 1
-		
+		We did not measure the same result for execution speed of RxFifo\_Get for all three methods. The first method of printing out the cycle count after returning from RxFifo\_Get was the least intrusive but only stored one value from FIFO at a time and wrote over it every execution. Using printf inside the RxFifo\_Get function was the most intrusive but had the benefit of providing not only the execution time but also the data received from the FIFO and the current FIFO pointer for ever execution cycle. The memory dump provided only the the first 10 data values recieved from the FIFO but was less intrusive than inserting the printf function into RxFifo\_Get leading to a value generally between the values measured by the original FIFO function and the FIFO function with printf inside.
 
 	\item %Question 2
 		If you expected the execution speed to vary a lot, you should use the data dump technique. This technique is less intrusive than printing data to a screen and the amount of time needed to dump data each execution cycle should remain almost constant. This technique also allows for storing a large number of data entries for review later to allow averaging over hundreds of samples for average execution time as well as finding the most likely minimum and maximum execution times.
