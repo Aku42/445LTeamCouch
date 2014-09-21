@@ -1,1 +1,6 @@
-* # Blacklist everything
+*
+!*/
+!*.c
+!*.h
+!*.uvproj
+!*.s
