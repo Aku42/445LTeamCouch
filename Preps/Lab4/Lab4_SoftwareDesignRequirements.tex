@@ -1,0 +1,67 @@
+\documentclass{article}
+\usepackage[letterpaper,margin=1in]{geometry}
+
+\usepackage{graphicx}
+\usepackage{etoolbox}
+
+
+\begin{document}
+
+\title{Requirements Document for Lab 4 DC Motor Control}
+\author{Joshua Bryant \\(jmb6357) \and James Morris \\(jsm3288)}
+
+\maketitle
+
+\section{Overview}
+
+	\subsection{Objectives}
+		The objectives of this project are to design, build and test a brushed DC motor controller. The motor should spin at a constant speed and the operator can specify the desired set point. Educationally, students are learning how to interface a DC motor, how to measure speed using input capture, and how to implement a digital controller running in the background.
+	\subsection{Process}
+		The project will be developed using the EK-TM4C123GXL or EK-TM4C1294XL LaunchPad. There will be two switches that the operator will use to specify  the desired speed of the motor. The system will be built on a solderless breadboard and run on the usual USB power. The system may use the on board switches or off-board switches. A hardware/software interface will be designed that allows software to control the DC motor. There will be at least five hardware/software modules: tachometer input, switch input, motor output, LCD output, and the motor controller. The process will be to design and test each module independently from the other modules. After each module is tested, the system will be built and tested.
+	\subsection{Roles and Responsibilities}
+		EE445L students are the engineers and the TA is the client. Student A will build and test the sensor system. Student B will build the actuator and switch input. Both students will work on the controller. \textbf{replace with actual plan}
+	\subsection{Interactions with Existing Systems}
+		The system will use the microcontroller board, a solderless breadbaord, and the DC motor. The wiring connector for the DC motor is described in the PCB Artist file \textbf{Lab4B\_Artist.sch}. It will be powered using the USB cable. You may use a +5V power from the lab bench, but please do not power the motor with a voltage above +5V. 
+	\subsection{Terminology}
+		\begin{description}
+			\item[Integral Controller]
+				A controller whose output is proportional to the error of the output of the system compared to the desired setpoint.
+			\item[Pulse Width Modulation (PWM)]
+				A technique to deliver a variable signal (voltage, power, energy) using an on/off signal with a variable percentage of time the signal is on (duty cycle).
+			\item[Board Support Package (BSP)]
+				A set of software routines that abstract the I/O hardware such that the same high-level code can run on multiple computers.
+			\item[Back EMF]
+				A large voltage potential induced across an inductor due to large changes in current with respect to time ($\frac{dI}{dt}$) according to the equation $V=L*\frac{dI}{dt}$.
+			\item[Torque]
+				Available force times distance the stepper motor can provide at a given speed.
+			\item[Time Constant]
+				The time to reach 63.2\% of the final output after the input is instantaneously increased.
+			\item[Hysteresis]
+				A condition when the output of a system depends not only on the input, but also on the previous outputs, e.g., a transducer that follows a different response curve when the input is increasing than when the input is decreasing.
+		\end{description}
+	\subsection{Security}
+		The system may include software from TivaWare and from the book. No software written for this project may be transmitted, viewed, or communicated with any other EE445L student past, present, or future (other than the lab partner of course). IT is the responsibility of the team to keep its EE445L lab solutions secure.
+\section{Function Description}
+
+	\subsection{Functionality}
+		If all buttons are released, then the motor should spin at a constant speed. If switch 1 is pressed and released, the desired speed should increase by 5 rps, up to a maximum of 40 rps. If switch 2 is pressed and released, the desired speed should decrease by 5 rps, down to a minimum of 0 rps. \textit{feel free to change how the set point is established, and feel free to change the maximum speed}\\
+		Both the desired and actual speed should be plotted on the color LCD as a function of time.
+	\subsection{Scope}
+		Phase 1 is the preparation; phase 2 is the demonstration; and phase 3 is the lab report. Details can be found in the lab manual.
+	\subsection{Prototypes}
+		A prototype system running on the EK-TM4C123GXL or EK-TM4C1294XL LaunchPad and solderless breadboard will be demonstrated. Progress will be judged by the preparation, demonstration, and lab report.
+	\subsection{Performance}
+		The system will be judged by three qualitative measures. First, the software modules must be easy to understand and well-organized. Second, the system must employ an integral controller running in the background. There should be a clear and obvious abstraction, separating the state estimator, user interface, the controller and the actuator output. Backward jumps in the ISR are not allowed. Third, all software will be judged according to style guidelines. Software must follow the style described in Section 3.3 of the book \textit{(note to students: you may edit this sentence to define a different style format)}. There are three quantitative measures. First, the average speed error at a desired speed of 60 rps will be measured. The average error should be less than 5 rps. Second, the step response is the time it takes for the new speed to hit 60 rps after the set point is changed from 40 to 60 rps. Third, you will measure power supply current to run the system. There is no particular need to minimize controller error, step response, or system current in this system.
+	\subsection{Usability}
+		There will be two switch inputs. The tachometer will be used to measure motor speed. The DC motor will operate under no load conditions.
+	\subsection{Safety}
+		The motor current under no load will be less than 100 mA. However, under heavy friction this current could be 5 to 10 times higher. Therefore, please run the motors unloaded. Connecting or disconnecting wires on the protoboard while power is applied will damage the microcontroller. Operating the circuit without a snubber diode will also damage the microcontroller. 
+\section{Deliverables}
+
+	\subsection{Reports}
+		A lab report is due October 4th, 2014. This report includes the final requirements documents.
+	\subsection{Audits}
+		The preparation is due at the beginning of the lab period October 24th.
+	\subsection{Outcomes}
+		There are three deliverables: preparation, demonstration, and report.
+\end{document}
