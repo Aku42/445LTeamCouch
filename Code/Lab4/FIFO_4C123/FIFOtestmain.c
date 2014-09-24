@@ -36,6 +36,10 @@
 #include "PLL.h"
 #include "Fifo.h"
 #include "Timer0A.h"
+#include "tach.h"
+#include "switch.h"
+#include "motor.h"
+
   __asm unsigned long 
 	Who(void){
     LDR R0, [SP,#48]               ; R0 = return address from interrupt
