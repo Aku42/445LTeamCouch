@@ -430,6 +430,21 @@
               <FileType>1</FileType>
               <FilePath>.\FIFOtestmain.c</FilePath>
             </File>
+            <File>
+              <FileName>motor.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\motor.c</FilePath>
+            </File>
+            <File>
+              <FileName>switch.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\switch.c</FilePath>
+            </File>
+            <File>
+              <FileName>tach.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\tach.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>
