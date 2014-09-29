@@ -5,4 +5,4 @@
 
 void tach_init(void);
 
-uint32_t tach_get(void);
+uint16_t tach_getTimeDiff(void);
