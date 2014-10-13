@@ -78,7 +78,7 @@ int main(void){
 		
 	while(1){
 		error = setpoint - error;//Difference in time between how long it should take to rotate between ticks and how long it actually takes
-		motor_setDuty(setpoint * (1+error));
+		motor_setDuty(setpoint + (k_i*error));
 	}
 	
 }

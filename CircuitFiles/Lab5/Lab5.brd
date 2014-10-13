@@ -728,7 +728,7 @@ design rules under a new name.</description>
 <element name="R5" library="EE445L" package="RES300MIL" value="20K" x="-1.905" y="-171.45"/>
 <element name="C1" library="EE445L" package="CAP200MILPOLARIZED" value="10 Uf" x="-2.54" y="-176.53"/>
 <element name="C2" library="EE445L" package="CAP200MIL" value="0.1 uF" x="-3.175" y="-182.88"/>
-<element name="C3" library="EE445L" package="CAP200MIL" value="0.1" x="-3.175" y="-187.325"/>
+<element name="C3" library="EE445L" package="CAP200MIL" value="0.1 uF" x="-3.175" y="-187.325"/>
 <element name="C4" library="EE445L" package="CAP200MILPOLARIZED" value="4.7 uF" x="-2.54" y="-192.405"/>
 <element name="R6" library="EE445L" package="RES300MIL" value="20K" x="-1.905" y="-198.755"/>
 <element name="R7" library="EE445L" package="RES300MIL" value="20K" x="-1.905" y="-202.565"/>

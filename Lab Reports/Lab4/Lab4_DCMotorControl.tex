@@ -24,6 +24,7 @@
 \usepackage{graphicx} % Required for the inclusion of images
 \usepackage{amsmath} % Required for some math elements
 \usepackage{enumitem}
+\usepackage{subcaption}
 
 \setlength\parindent{0pt} % Removes all indentation from paragraphs
 
@@ -118,13 +119,56 @@
 %----------------------------------------------------------------------------------------
 %	SECTION 3 Software Design
 %----------------------------------------------------------------------------------------
-\section{Software Design}
+%\section{Software Design}
 
 %----------------------------------------------------------------------------------------
 %	SECTION 4 Measurement Data
 %----------------------------------------------------------------------------------------
 \section{Measurement Data}
+	\begin{enumerate}
+		\item[1)]
+			The resistance of the motor was measured to be 44.6 $\Omega$s. Below is the table of the measured current through and the voltage across the motor at no load. Please note that the motor did not spin until $\sim$2.5V was put across the motor.\\
+			\begin{tabular}[h]{|c|c|}
+				\hline
+				Voltage (V) & Current (mA) \\	\hline
+				1	&	0.3 \\	\hline
+				2 	&	0.5	\\	\hline
+				3	&	93	\\	\hline
+				4	&	99	\\	\hline
+				5	&	105	\\	\hline
+			\end{tabular}
+			
+		\item[2)]
+			The $I_{be}$ was $\sim$0.013 mA and the $I_{ce}$ was $\sim$85 mA.
+			
+		\item[3)]
+			Below is the output signal of the tachometer after passing through the op-amp at two different running speeds of the motor.
+			\centering		
+			\begin{figure}[h]
+				\centering
+				\begin{subfigure}{0.45\textwidth}
+					\includegraphics[keepaspectratio, width=\textwidth]{Lab4Graphics/TachMeasurement1}
+					\caption{Tachometer Output at 50 rps}
+					\label{fig:SS_TachMeasure1}
+				\end{subfigure}
+				\hfill
+				\begin{subfigure}{0.45\textwidth}
+					\includegraphics[keepaspectratio, width=\textwidth]{Lab4Graphics/TachMeasurement2}	
+					\caption{Tachometer Output at 30 rps}
+					\label{fig:SS_TachMeasure2}
+				\end{subfigure}
+				\caption{Screen shots of the oscilloscope measuring the tachometer signal output by the op-amp at two different running speeds of the motor.}
+				\label{fig:SS_B&C}			
+				\hfill		
+			\end{figure}
+			\raggedright		
 
+		\item[4)]
+			The maximum time to execute one instance of the ISR is $\sim$1.5 $\mu$s. The average controller error was measured at 5.2\%. The response time of our system is $\sim$0.5 s.
+			
+		\item[5)]
+			The current of the system with the motor spinning was 209 mA while the current required to run the system with the motor stationary was 137 mA.
+	\end{enumerate}
 %----------------------------------------------------------------------------------------
 %	SECTION 5 Analysis and Discussion
 %----------------------------------------------------------------------------------------
@@ -138,7 +182,7 @@
 			\end{figure}
 			When the brushed DC-motor is allowed to free spin with no load, the back EMF (denoted by EMF) in the figure above, is nearly equivalent in magnitude and opposite in polarity to the voltage difference applied across the motor. The back EMF will be slightly less than the voltage differential causing a small voltage difference to form across the inductor and resistor allowing for a small, no-load current. When a load is applied, whether it be friction or another outside load, the back EMF produced by the motor drops in magnitude causing a larger voltage difference to form across the inductor and resistor leading to a higher current.
 		\item %Question 3
-			The important factors in selecting the motor drive interface chip were the Emitter-Base voltage, Collector-Emitter Voltage, and the total power dissipation. The max Collector-Emitter voltage for the TIP120 is 60V, the Emitter-Base voltage if 5V, and the total power dissipation is limited to 65W. Our circuit falls well within these requirements since the motor only requires a 6-20V difference to operate, we drive the base to 5V through the on-board power regulator of the TM4C1294 board, and the highest current measured through the motor was \textbf{(insert max current measurement here)} leading to a maximum power dissipation being well under the maximum limit of the TIP120.
+			The important factors in selecting the motor drive interface chip were the Emitter-Base voltage, Collector-Emitter Voltage, and the total power dissipation. The max Collector-Emitter voltage for the TIP120 is 60V, the Emitter-Base voltage if 5V, and the total power dissipation is limited to 65W. Our circuit falls well within these requirements since the motor only requires a 6-20V difference to operate, we drive the base to 5V through the on-board power regulator of the TM4C1294 board, and the highest current measured through the motor was 209 mA leading to a maximum power dissipation being well under the maximum limit of the TIP120.
 		\item %Question 4
 			Instead of implementing only an integral controller, we could have implemented a full PID control loop. Or, if we got really fancy and knew more of the mechanical parameters of our system, we could implement a PID loop with a feed forward term.\\
 			The PID control with a feed forward term would be superior to our current I control by allowing a faster response time to changing set point values as well as reduce initial bouncing of the output signal when first reaching a new set point as well as maintaining a smaller running error when maintaining a given set point, provided the loop is tuned correctly.

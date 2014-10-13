@@ -1577,7 +1577,7 @@ This board is based on the TM4C1294NCPDT microcontroller, which is a120MHz 32-bi
 <part name="R5" library="EE445L" deviceset="RESISTOR" device="0204/7" value="20K"/>
 <part name="C1" library="EE445L" deviceset="CAPACITOR_POLARIZED" device="E5-6" value="10 Uf"/>
 <part name="C2" library="EE445L" deviceset="CAPACITOR" device="050-024X044" value="0.1 uF"/>
-<part name="C3" library="EE445L" deviceset="CAPACITOR" device="050-024X044" value="0.1"/>
+<part name="C3" library="EE445L" deviceset="CAPACITOR" device="050-024X044" value="0.1 uF"/>
 <part name="C4" library="EE445L" deviceset="CAPACITOR_POLARIZED" device="E5-6" value="4.7 uF"/>
 <part name="SUPPLY3" library="EE445L" deviceset="GND" device=""/>
 <part name="+3V1" library="EE445L" deviceset="+3V3" device=""/>
