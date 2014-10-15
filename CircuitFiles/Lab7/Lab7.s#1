@@ -5269,22 +5269,20 @@ Source: http://www.irf.com/product-info/datasheets/data/irf4905pbf.pdf</descript
 <part name="GND" library="EE445L" deviceset="TP2" device=""/>
 <part name="U$1" library="EE445L" deviceset="EK-TM4C1294XL_BOOST2" device=""/>
 <part name="U$2" library="EE445L" deviceset="EK-TM4C1294XL_BOOST1" device=""/>
-<part name="S1" library="EE445L" deviceset="B3F-1052" device=""/>
+<part name="START/STOP" library="EE445L" deviceset="B3F-1052" device=""/>
 <part name="+3V4" library="EE445L" deviceset="+3V3" device="" value="+5V"/>
 <part name="SUPPLY6" library="EE445L" deviceset="GND" device=""/>
 <part name="R7" library="rcl" deviceset="R-US_" device="0204/2V" value="10k"/>
 <part name="IC1" library="EE445L" deviceset="78XXS" device=""/>
-<part name="C1" library="EE445L" deviceset="CAPACITOR" device="050-024X044"/>
-<part name="C2" library="EE445L" deviceset="CAPACITOR" device="050-024X044"/>
-<part name="LED1" library="EE445L" deviceset="LED" device="5MM"/>
+<part name="C1" library="EE445L" deviceset="CAPACITOR" device="050-024X044" value="10 uF"/>
+<part name="C2" library="EE445L" deviceset="CAPACITOR" device="050-024X044" value="10 uF"/>
+<part name="POWER" library="EE445L" deviceset="LED" device="5MM" value="RED"/>
 <part name="Q1" library="EE445L" deviceset="PN2222" device=""/>
 <part name="Q2" library="EE445L" deviceset="PN2222" device=""/>
 <part name="R2" library="EE445L" deviceset="RESISTOR" device="0204/7"/>
 <part name="R3" library="EE445L" deviceset="RESISTOR" device="0204/7"/>
 <part name="R4" library="EE445L" deviceset="RESISTOR" device="0204/7"/>
 <part name="R5" library="EE445L" deviceset="RESISTOR" device="0204/7"/>
-<part name="R6" library="EE445L" deviceset="RESISTOR" device="0204/7"/>
-<part name="R8" library="EE445L" deviceset="RESISTOR" device="0204/7"/>
 <part name="R9" library="EE445L" deviceset="RESISTOR" device="0204/7"/>
 <part name="R10" library="EE445L" deviceset="RESISTOR" device="0204/7"/>
 <part name="Q3" library="transistor-power" deviceset="IRF3704" device="-H" value="IRF522"/>
@@ -5295,6 +5293,9 @@ Source: http://www.irf.com/product-info/datasheets/data/irf4905pbf.pdf</descript
 <part name="SUPPLY3" library="EE445L" deviceset="GND" device=""/>
 <part name="+VBATT" library="EE445L" deviceset="+3V3" device="" value="+VBatt"/>
 <part name="SUPPLY1" library="EE445L" deviceset="GND" device=""/>
+<part name="R1" library="EE445L" deviceset="RESISTOR" device="0204/7" value="470"/>
+<part name="TILT_FOR" library="EE445L" deviceset="B3F-1052" device=""/>
+<part name="TILT_BACK" library="EE445L" deviceset="B3F-1052" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -5317,26 +5318,24 @@ James Morris (jsm3288)</text>
 <instance part="GND" gate="1" x="0" y="35.56"/>
 <instance part="U$1" gate="G$1" x="5.08" y="27.94"/>
 <instance part="U$2" gate="G$1" x="2.54" y="64.77"/>
-<instance part="S1" gate="1" x="43.18" y="-7.62" rot="R270"/>
+<instance part="START/STOP" gate="1" x="43.18" y="-7.62" rot="R270"/>
 <instance part="+3V4" gate="G$1" x="27.94" y="2.54" smashed="yes">
 <attribute name="VALUE" x="26.67" y="3.81" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="SUPPLY6" gate="GND" x="60.96" y="-41.91"/>
+<instance part="SUPPLY6" gate="GND" x="60.96" y="-66.04"/>
 <instance part="R7" gate="G$1" x="53.34" y="-12.7" rot="R90"/>
 <instance part="IC1" gate="1" x="-66.04" y="2.54"/>
 <instance part="C1" gate="G$1" x="-55.88" y="-2.54"/>
 <instance part="C2" gate="G$1" x="-78.74" y="-2.54"/>
-<instance part="LED1" gate="G$1" x="-45.72" y="-2.54"/>
+<instance part="POWER" gate="G$1" x="-38.1" y="-12.7"/>
 <instance part="Q1" gate="G1" x="-86.36" y="-63.5"/>
 <instance part="Q2" gate="G1" x="-35.56" y="-63.5" rot="MR0"/>
 <instance part="R2" gate="G$1" x="-25.4" y="-63.5"/>
 <instance part="R3" gate="G$1" x="-96.52" y="-63.5"/>
 <instance part="R4" gate="G$1" x="-88.9" y="-45.72" rot="R90"/>
 <instance part="R5" gate="G$1" x="-33.02" y="-45.72" rot="MR90"/>
-<instance part="R6" gate="G$1" x="81.28" y="-15.24"/>
-<instance part="R8" gate="G$1" x="111.76" y="-15.24"/>
-<instance part="R9" gate="G$1" x="81.28" y="-45.72"/>
-<instance part="R10" gate="G$1" x="81.28" y="-58.42"/>
+<instance part="R9" gate="G$1" x="53.34" y="-33.02" rot="R90"/>
+<instance part="R10" gate="G$1" x="53.34" y="-58.42" rot="R90"/>
 <instance part="Q3" gate="G$1" x="-78.74" y="-53.34"/>
 <instance part="Q4" gate="G$1" x="-43.18" y="-53.34" rot="MR0"/>
 <instance part="Q5" gate="G$1" x="-78.74" y="-30.48"/>
@@ -5345,6 +5344,9 @@ James Morris (jsm3288)</text>
 <instance part="SUPPLY3" gate="GND" x="-60.96" y="-60.96"/>
 <instance part="+VBATT" gate="G$1" x="-60.96" y="-22.86"/>
 <instance part="SUPPLY1" gate="GND" x="-66.04" y="-12.7"/>
+<instance part="R1" gate="G$1" x="-38.1" y="-2.54" rot="R270"/>
+<instance part="TILT_FOR" gate="1" x="43.18" y="-25.4" rot="R270"/>
+<instance part="TILT_BACK" gate="1" x="43.18" y="-50.8" rot="R270"/>
 </instances>
 <busses>
 </busses>
@@ -5397,6 +5399,25 @@ James Morris (jsm3288)</text>
 <wire x1="-55.88" y1="-7.62" x2="-66.04" y2="-7.62" width="0.1524" layer="91"/>
 <pinref part="IC1" gate="1" pin="GND"/>
 <wire x1="-66.04" y1="-5.08" x2="-66.04" y2="-7.62" width="0.1524" layer="91"/>
+<pinref part="POWER" gate="G$1" pin="C"/>
+<wire x1="-38.1" y1="-17.78" x2="-55.88" y2="-17.78" width="0.1524" layer="91"/>
+<wire x1="-55.88" y1="-17.78" x2="-55.88" y2="-7.62" width="0.1524" layer="91"/>
+<junction x="-55.88" y="-7.62"/>
+<junction x="-66.04" y="-7.62"/>
+</segment>
+<segment>
+<pinref part="R10" gate="G$1" pin="1"/>
+<pinref part="SUPPLY6" gate="GND" pin="GND"/>
+<wire x1="53.34" y1="-63.5" x2="60.96" y2="-63.5" width="0.1524" layer="91"/>
+<pinref part="R7" gate="G$1" pin="1"/>
+<wire x1="53.34" y1="-17.78" x2="60.96" y2="-17.78" width="0.1524" layer="91"/>
+<wire x1="60.96" y1="-17.78" x2="60.96" y2="-38.1" width="0.1524" layer="91"/>
+<pinref part="R9" gate="G$1" pin="1"/>
+<wire x1="60.96" y1="-38.1" x2="60.96" y2="-63.5" width="0.1524" layer="91"/>
+<wire x1="53.34" y1="-38.1" x2="60.96" y2="-38.1" width="0.1524" layer="91"/>
+<junction x="60.96" y="-63.5"/>
+<junction x="60.96" y="-38.1"/>
+<junction x="60.96" y="-17.78"/>
 </segment>
 </net>
 <net name="PA4" class="0">
@@ -5501,6 +5522,18 @@ James Morris (jsm3288)</text>
 <pinref part="U$1" gate="G$1" pin="+5V"/>
 <wire x1="-15.24" y1="38.1" x2="-5.08" y2="38.1" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="IC1" gate="1" pin="OUT"/>
+<wire x1="-58.42" y1="2.54" x2="-55.88" y2="2.54" width="0.1524" layer="91"/>
+<pinref part="C1" gate="G$1" pin="1"/>
+<wire x1="-55.88" y1="2.54" x2="-38.1" y2="2.54" width="0.1524" layer="91"/>
+<wire x1="-55.88" y1="0" x2="-55.88" y2="2.54" width="0.1524" layer="91"/>
+<pinref part="R1" gate="G$1" pin="1"/>
+<wire x1="-38.1" y1="2.54" x2="-25.4" y2="2.54" width="0.1524" layer="91"/>
+<junction x="-55.88" y="2.54"/>
+<junction x="-38.1" y="2.54"/>
+<label x="-30.48" y="2.54" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="+3.3V" class="0">
 <segment>
@@ -5527,13 +5560,21 @@ James Morris (jsm3288)</text>
 <segment>
 <pinref part="+3V4" gate="G$1" pin="+3V3"/>
 <wire x1="27.94" y1="0" x2="27.94" y2="-7.62" width="0.1524" layer="91"/>
-<pinref part="S1" gate="1" pin="P"/>
+<pinref part="START/STOP" gate="1" pin="P"/>
 <wire x1="38.1" y1="-7.62" x2="27.94" y2="-7.62" width="0.1524" layer="91"/>
+<pinref part="TILT_FOR" gate="1" pin="P"/>
+<wire x1="27.94" y1="-7.62" x2="27.94" y2="-25.4" width="0.1524" layer="91"/>
+<wire x1="27.94" y1="-25.4" x2="38.1" y2="-25.4" width="0.1524" layer="91"/>
+<pinref part="TILT_BACK" gate="1" pin="P"/>
+<wire x1="27.94" y1="-25.4" x2="27.94" y2="-50.8" width="0.1524" layer="91"/>
+<wire x1="27.94" y1="-50.8" x2="38.1" y2="-50.8" width="0.1524" layer="91"/>
+<junction x="27.94" y="-25.4"/>
+<junction x="27.94" y="-7.62"/>
 </segment>
 </net>
 <net name="PB2" class="0">
 <segment>
-<pinref part="S1" gate="1" pin="S"/>
+<pinref part="START/STOP" gate="1" pin="S"/>
 <wire x1="48.26" y1="-7.62" x2="53.34" y2="-7.62" width="0.1524" layer="91"/>
 <pinref part="R7" gate="G$1" pin="2"/>
 <wire x1="53.34" y1="-7.62" x2="58.42" y2="-7.62" width="0.1524" layer="91"/>
@@ -5544,17 +5585,15 @@ James Morris (jsm3288)</text>
 <label x="-45.72" y="57.15" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="N$8" class="0">
-<segment>
-<pinref part="R7" gate="G$1" pin="1"/>
-<wire x1="53.34" y1="-17.78" x2="60.96" y2="-17.78" width="0.1524" layer="91"/>
-<wire x1="60.96" y1="-17.78" x2="60.96" y2="-40.64" width="0.1524" layer="91"/>
-</segment>
-</net>
 <net name="PB3" class="0">
 <segment>
 <wire x1="-38.1" y1="54.61" x2="-45.72" y2="54.61" width="0.1524" layer="91"/>
 <label x="-45.72" y="54.61" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="TILT_FOR" gate="1" pin="S"/>
+<wire x1="48.26" y1="-25.4" x2="58.42" y2="-25.4" width="0.1524" layer="91"/>
+<label x="53.34" y="-25.4" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="M+" class="0">
@@ -5653,17 +5692,28 @@ James Morris (jsm3288)</text>
 <wire x1="2.54" y1="-50.8" x2="-5.08" y2="-50.8" width="0.1524" layer="91"/>
 <label x="-11.43" y="-50.8" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="IC1" gate="1" pin="IN"/>
+<wire x1="-86.36" y1="2.54" x2="-78.74" y2="2.54" width="0.1524" layer="91"/>
+<pinref part="C2" gate="G$1" pin="1"/>
+<wire x1="-78.74" y1="2.54" x2="-73.66" y2="2.54" width="0.1524" layer="91"/>
+<wire x1="-78.74" y1="2.54" x2="-78.74" y2="0" width="0.1524" layer="91"/>
+<junction x="-78.74" y="2.54"/>
+<label x="-86.36" y="2.54" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="N$1" class="0">
 <segment>
 <pinref part="R3" gate="G$1" pin="1"/>
 <wire x1="-101.6" y1="-63.5" x2="-111.76" y2="-63.5" width="0.1524" layer="91"/>
+<label x="-111.76" y="-63.5" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$2" class="0">
 <segment>
 <pinref part="R2" gate="G$1" pin="2"/>
 <wire x1="-20.32" y1="-63.5" x2="-12.7" y2="-63.5" width="0.1524" layer="91"/>
+<label x="-17.78" y="-63.5" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="ENC_A" class="0">
@@ -5680,22 +5730,32 @@ James Morris (jsm3288)</text>
 <label x="-10.16" y="-63.5" size="1.778" layer="95"/>
 </segment>
 </net>
+<net name="N$7" class="0">
+<segment>
+<pinref part="R1" gate="G$1" pin="2"/>
+<pinref part="POWER" gate="G$1" pin="A"/>
+<wire x1="-38.1" y1="-7.62" x2="-38.1" y2="-10.16" width="0.1524" layer="91"/>
+</segment>
+</net>
 <net name="N$5" class="0">
 <segment>
-<pinref part="IC1" gate="1" pin="IN"/>
-<wire x1="-86.36" y1="2.54" x2="-78.74" y2="2.54" width="0.1524" layer="91"/>
-<pinref part="C2" gate="G$1" pin="1"/>
-<wire x1="-78.74" y1="2.54" x2="-73.66" y2="2.54" width="0.1524" layer="91"/>
-<wire x1="-78.74" y1="2.54" x2="-78.74" y2="0" width="0.1524" layer="91"/>
+<pinref part="TILT_FOR" gate="1" pin="S1"/>
+<pinref part="R9" gate="G$1" pin="2"/>
+<wire x1="48.26" y1="-27.94" x2="53.34" y2="-27.94" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$6" class="0">
 <segment>
-<pinref part="IC1" gate="1" pin="OUT"/>
-<wire x1="-58.42" y1="2.54" x2="-55.88" y2="2.54" width="0.1524" layer="91"/>
-<pinref part="C1" gate="G$1" pin="1"/>
-<wire x1="-55.88" y1="2.54" x2="-40.64" y2="2.54" width="0.1524" layer="91"/>
-<wire x1="-55.88" y1="0" x2="-55.88" y2="2.54" width="0.1524" layer="91"/>
+<pinref part="TILT_BACK" gate="1" pin="S1"/>
+<pinref part="R10" gate="G$1" pin="2"/>
+<wire x1="48.26" y1="-53.34" x2="53.34" y2="-53.34" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$10" class="0">
+<segment>
+<pinref part="TILT_BACK" gate="1" pin="S"/>
+<wire x1="48.26" y1="-50.8" x2="58.42" y2="-50.8" width="0.1524" layer="91"/>
+<label x="53.34" y="-50.8" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>

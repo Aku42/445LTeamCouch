@@ -5291,7 +5291,7 @@ Source: http://www.irf.com/product-info/datasheets/data/irf4905pbf.pdf</descript
 <part name="Q4" library="transistor-power" deviceset="IRF3704" device="-H" value="IRF522"/>
 <part name="Q5" library="transistor-power" deviceset="IRF4905" device="" value="FQP27P06"/>
 <part name="Q6" library="transistor-power" deviceset="IRF4905" device="" value="FQP27P06"/>
-<part name="JP1" library="EE445L" deviceset="PINHD-1X6" device=""/>
+<part name="NXT_MOTOR" library="EE445L" deviceset="PINHD-1X6" device=""/>
 <part name="SUPPLY3" library="EE445L" deviceset="GND" device=""/>
 <part name="+VBATT" library="EE445L" deviceset="+3V3" device="" value="+VBatt"/>
 </parts>
@@ -5340,7 +5340,7 @@ James Morris (jsm3288)</text>
 <instance part="Q4" gate="G$1" x="-43.18" y="-53.34" rot="MR0"/>
 <instance part="Q5" gate="G$1" x="-78.74" y="-30.48"/>
 <instance part="Q6" gate="G$1" x="-43.18" y="-30.48" rot="MR0"/>
-<instance part="JP1" gate="A" x="5.08" y="-58.42"/>
+<instance part="NXT_MOTOR" gate="A" x="5.08" y="-58.42"/>
 <instance part="SUPPLY3" gate="GND" x="-60.96" y="-60.96"/>
 <instance part="+VBATT" gate="G$1" x="-60.96" y="-22.86"/>
 </instances>
@@ -5382,7 +5382,7 @@ James Morris (jsm3288)</text>
 <junction x="-76.2" y="-58.42"/>
 </segment>
 <segment>
-<pinref part="JP1" gate="A" pin="2"/>
+<pinref part="NXT_MOTOR" gate="A" pin="2"/>
 <wire x1="2.54" y1="-53.34" x2="-5.08" y2="-53.34" width="0.1524" layer="91"/>
 <label x="-7.62" y="-53.34" size="1.778" layer="95"/>
 </segment>
@@ -5556,7 +5556,7 @@ James Morris (jsm3288)</text>
 <junction x="-76.2" y="-43.18"/>
 </segment>
 <segment>
-<pinref part="JP1" gate="A" pin="3"/>
+<pinref part="NXT_MOTOR" gate="A" pin="3"/>
 <wire x1="2.54" y1="-55.88" x2="-5.08" y2="-55.88" width="0.1524" layer="91"/>
 <label x="-5.08" y="-55.88" size="1.778" layer="95"/>
 </segment>
@@ -5572,7 +5572,7 @@ James Morris (jsm3288)</text>
 <junction x="-45.72" y="-43.18"/>
 </segment>
 <segment>
-<pinref part="JP1" gate="A" pin="4"/>
+<pinref part="NXT_MOTOR" gate="A" pin="4"/>
 <wire x1="2.54" y1="-58.42" x2="-5.08" y2="-58.42" width="0.1524" layer="91"/>
 <label x="-5.08" y="-58.42" size="1.778" layer="95"/>
 </segment>
@@ -5637,7 +5637,7 @@ James Morris (jsm3288)</text>
 <junction x="-45.72" y="-25.4"/>
 </segment>
 <segment>
-<pinref part="JP1" gate="A" pin="1"/>
+<pinref part="NXT_MOTOR" gate="A" pin="1"/>
 <wire x1="2.54" y1="-50.8" x2="-5.08" y2="-50.8" width="0.1524" layer="91"/>
 <label x="-11.43" y="-50.8" size="1.778" layer="95"/>
 </segment>
@@ -5656,14 +5656,14 @@ James Morris (jsm3288)</text>
 </net>
 <net name="ENC_A" class="0">
 <segment>
-<pinref part="JP1" gate="A" pin="5"/>
+<pinref part="NXT_MOTOR" gate="A" pin="5"/>
 <wire x1="2.54" y1="-60.96" x2="-5.08" y2="-60.96" width="0.1524" layer="91"/>
 <label x="-10.16" y="-60.96" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="ENC_B" class="0">
 <segment>
-<pinref part="JP1" gate="A" pin="6"/>
+<pinref part="NXT_MOTOR" gate="A" pin="6"/>
 <wire x1="2.54" y1="-63.5" x2="-5.08" y2="-63.5" width="0.1524" layer="91"/>
 <label x="-10.16" y="-63.5" size="1.778" layer="95"/>
 </segment>
