@@ -1,0 +1,61 @@
+\documentclass{article}
+\usepackage[letterpaper,margin=1in]{geometry}
+
+\usepackage{graphicx}
+\usepackage{etoolbox}
+\usepackage{enumitem}
+
+\newlist{inlinelist}{enumerate*}{1}
+\setlist*[inlinelist,1]{%
+  label=(\arabic*),
+}
+
+\begin{document}
+
+\title{Requirements Document for Lab 7 Design and Layout of an Embedded System}
+\author{Joshua Bryant\\ (jmb6357) \and James Morris\\ (jsm3288)}
+
+\maketitle
+
+\section{Overview}
+
+	\subsection{Objectives}
+		The objectives of this project are to design, build, and test a rope-climbing robot. Educationally, students are learning how to choose an appropriate power source and motor for an embedded system that should, ideally, be optimized for low weight and long run time. Our goal is to make a robot capable of carrying its own weight up a rope and be completely self-contained.
+	\subsection{Roles and Responsibilities}
+		EE445L students are the engineers and the TA as well as the independent panel, specified in the lab11.doc, are the clients. James Morris will be the lead for programming and Joshua Bryant will be the lead on designing and debugging the circuit. Although the tasks are split between both members of this team, at the time of demonstration, both students are expected to understand all aspects of the design.
+	\subsection{Interactions with Existing Systems}
+		The system will use the TM4C1294 board, a custom-made pcb circuit, one SPST switch, one SPDT switch, two mercury switches, along with a motor and a servo as shown in the accompanying schematic for the project. It will be powered through an on-board battery.
+\section{Function Description}
+
+	\subsection{Functionality}
+		The robot will be loaded onto a rope before beginning. If the operator presses the start/stop button, the robot will begin to climb or stop climbing the rope. If the operator presses the start/stop button once, the robot should begin or resume climbing the rope. Pressing the start/stop button again causes the robot to stop climbing.\\
+		The robot should utilize the two mercury switches on board in order to determine which direction to climb the rope. If one end of the robot is above the other, i.e. gravity is pulling the robot towards one of the ends through which rope passes, then the robot should climb up and away from gravity. If both mercury switches are not activated, then the robot is laying horizontal. In this state, the robot should go in the direction specified by the user through the SPDT switch. In order for the robot to be able to climb in both directions, the motor will need be driven both forwards and backwards. This functionality will require designing and implementing an h-bridge circuit to control the motor's speed and direction.\\
+		The program should utilize at least two timer based interrupts in controlling this robot. There should also be no backward jumps in the ISRs.
+	\subsection{Performance}
+		The system will be judged by two qualitative measures. First, the software modules must be easy to understand and well-organized. Second, the design of the embedded system must be interesting and relevant to both the coursework covered in this course and to the personal goals of the students involved.\\
+		There are 2 quantitative measures the system will be judged by. First, the power-loss of the h-bridge driving circuitry should be measured. There is no particular need to optimize this quantitative measure for the system. Second, the angles at which both mercury switches will activate should be measured to demonstrate the three zones of operation for the robot.
+	\subsection{Usability}
+		There will be two switch inputs from the user and two mercury switch inputs within the robot as well as a quadrature encoder feedback on the motor output.
+\section{Deliverables}
+
+	\subsection{Reports}
+		Two lab reports will be made as part of this project. The first will be for Lab 7 and the second will be for Lab 11.
+	\subsection{Outcomes}
+		There are two sets of deliverables:
+		\begin{inlinelist}
+			\item Lab 7 deliverables and
+			\item Lab 11 deliverables
+		\end{inlinelist}.
+		The lab 7 deliverables will consist of:
+		\begin{inlinelist}
+			\item lab 7 preparation,
+			\item a mockup of the electronics for our embedded system, and
+			\item a lab 7 report
+		\end{inlinelist}.
+		The lab 11 deliverables will consist of:
+		\begin{inlinelist}
+			\item a lab 11 preparation,
+			\item a demonstration of our embedded system, and
+			\item a lab 11 report
+		\end{inlinelist}. There is also the possibility of a demonstration of our project to other faculty and staff within the ECE department if we are chosen for the final round of judging.
+\end{document}
